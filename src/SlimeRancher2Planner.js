@@ -28,12 +28,12 @@ export default function SlimeRancher2Planner() {
       >
         <CssBaseline />
         <Box
-          component="header"
           sx={{
             position: "fixed",
             top: 0,
             width:'100%',
             height:'50px',
+            zIndex:1,
             backgroundColor: (theme) =>
               theme.palette.mode === "light" ? theme.palette.grey[200] : theme.palette.grey[800],
           }}
@@ -41,12 +41,11 @@ export default function SlimeRancher2Planner() {
           <Header mode={mode} toggleColorMode={toggleColorMode} />
         </Box>
 
-        <Container component="main" sx={{ mt: 4, mb: 2, pt:'50px', pb:'85px'}} >
+        <Container  sx={{ pt:'60px', pb:'85px', maxWidth:'100%'}} >
           <Planner />
         </Container>
 
         <Box
-          component="footer"
           sx={{
             py: 3,
             px: 2,

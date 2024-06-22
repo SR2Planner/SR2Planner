@@ -37,7 +37,6 @@ const MenuProps = {
 
 const plotTypes = ["Empty", "Slimes", "Hens", "Fruit", "Veggies", "Mixed"];
 const corralSlimeTypes = [
-  "Nothing",
   "Angler Slime",
   "Batty Slime",
   "Boom Slime",
@@ -54,9 +53,9 @@ const corralSlimeTypes = [
   "Saber Slime",
   "Tabby Slime",
   "Yolky Slime",
+  "Nothing",
 ];
 const coopTypes = [
-  "Nothing",
   "Briar Hen",
   "Hen Hen",
   "Painted Hen",
@@ -65,9 +64,10 @@ const coopTypes = [
   "Thundercluck",
   "Mixed Hens",
   "Yolky Slime",
+  "Nothing",
 ];
-const fruitTypes = ["Nothing", "Cuberry", "Mint Mango", "Pogofruit", "Pomegranite", "Prickle Pear"];
-const veggieTypes = ["Nothing", "Carrot", "Heart Bear", "Odd Onion", "Water Lettuce"];
+const fruitTypes = ["Cuberry", "Mint Mango", "Pogofruit", "Pomegranite", "Prickle Pear", "Nothing"];
+const veggieTypes = ["Carrot", "Heart Bear", "Odd Onion", "Water Lettuce", "Nothing"];
 
 export default function FreeRangePlanner({ plotName }) {
   const [open, setOpen] = React.useState(false);
@@ -121,13 +121,11 @@ export default function FreeRangePlanner({ plotName }) {
   let buttonText = "";
   if (chosenPlotType != "") {
     if (chosenContent1 != "" && chosenContent2 != "") {
-      buttonText = `${chosenPlotType} with ${chosenContent1} and ${chosenContent2}`;
-    } else if (chosenContent1 == "" && chosenContent2 == "") {
-      buttonText = `${chosenPlotType}`;
+      buttonText = `${chosenContent1} and ${chosenContent2}`;
     } else if (chosenContent1 == "") {
-      buttonText = `${chosenPlotType} with ${chosenContent2}`;
+      buttonText = `${chosenContent2}`;
     } else if (chosenContent2 == "") {
-      buttonText = `${chosenPlotType} with ${chosenContent1}`;
+      buttonText = `${chosenContent1}`;
     }
   }
 

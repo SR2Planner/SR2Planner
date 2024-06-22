@@ -35,7 +35,6 @@ const MenuProps = {
 };
 
 const plotTypes = [
-  "Empty",
   "Corral",
   "Coop",
   "Fruit Garden",
@@ -43,9 +42,9 @@ const plotTypes = [
   "Incinerator",
   "Pond",
   "Silo",
+  "Empty",
 ];
 const corralSlimeTypes = [
-  "Nothing",
   "Angler Slime",
   "Batty Slime",
   "Boom Slime",
@@ -62,9 +61,9 @@ const corralSlimeTypes = [
   "Saber Slime",
   "Tabby Slime",
   "Yolky Slime",
+  "None",
 ];
 const coopTypes = [
-  "Nothing",
   "Briar Hen",
   "Hen Hen",
   "Painted Hen",
@@ -73,11 +72,12 @@ const coopTypes = [
   "Thundercluck",
   "Mixed Hens",
   "Yolky Slime",
+  "None",
 ];
-const fruitTypes = ["Nothing", "Cuberry", "Mint Mango", "Pogofruit", "Pomegranite", "Prickle Pear"];
-const veggieTypes = ["Nothing", "Carrot", "Heart Bear", "Odd Onion", "Water Lettuce"];
-const incineratorSlimeTypes = ["Nothing", "Fire"];
-const pondSlimeTypes = ["Nothing", "Puddle"];
+const fruitTypes = ["Cuberry", "Mint Mango", "Pogofruit", "Pomegranite", "Prickle Pear", "None"];
+const veggieTypes = ["Carrot", "Heart Bear", "Odd Onion", "Water Lettuce", "None"];
+const incineratorSlimeTypes = ["Fire", "None"];
+const pondSlimeTypes = ["Puddle", "None"];
 
 export default function Plot({ plotName }) {
   const [open, setOpen] = React.useState(false);
@@ -134,14 +134,21 @@ export default function Plot({ plotName }) {
 
   let buttonText = "";
   if (chosenPlotType != "") {
-    if (chosenContent1 != "" && chosenContent2 != "") {
+    if (
+      chosenContent1 != "" &&
+      chosenContent2 != "" &&
+      chosenContent1 != "None" &&
+      chosenContent2 != "None"
+    ) {
       buttonText = `${chosenPlotType} with ${chosenContent1} and ${chosenContent2}`;
     } else if (chosenContent1 == "" && chosenContent2 == "") {
       buttonText = `${chosenPlotType}`;
-    } else if (chosenContent1 == "") {
+    } else if (chosenContent1 == "" && chosenContent1 != "None") {
       buttonText = `${chosenPlotType} with ${chosenContent2}`;
-    } else if (chosenContent2 == "") {
+    } else if (chosenContent2 == "" && chosenContent2 != "None") {
       buttonText = `${chosenPlotType} with ${chosenContent1}`;
+    } else {
+      buttonText = "";
     }
   }
 

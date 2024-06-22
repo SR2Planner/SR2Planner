@@ -10,7 +10,8 @@ export default function Planner() {
   return (
     <Grid container spacing={3} width="100%">
       <Grid item xs={6}>
-        <Card>
+        <Card 
+        >
           <CardContent>
             <Typography variant="body1" fontWeight="medium" gutterBottom>
               The Gully
