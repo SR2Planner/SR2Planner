@@ -7,7 +7,8 @@ import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import Container from "@mui/material/Container";
 import Planner from "./components/layout/Planner";
-
+import FavFoods from "./components/util/FavFoods";
+import Divider from "@mui/material/Divider";
 
 export default function SlimeRancher2Planner() {
   const [mode, setMode] = React.useState("light");
@@ -31,19 +32,37 @@ export default function SlimeRancher2Planner() {
           sx={{
             position: "fixed",
             top: 0,
-            width:'100%',
-            height:'50px',
-            zIndex:1,
+            width: "100%",
+            height: "50px",
+            zIndex: 1,
             backgroundColor: (theme) =>
               theme.palette.mode === "light" ? theme.palette.grey[200] : theme.palette.grey[800],
           }}
         >
           <Header mode={mode} toggleColorMode={toggleColorMode} />
         </Box>
-
-        <Container  sx={{ pt:'60px', pb:'85px', maxWidth:'100%'}} >
-          <Planner />
-        </Container>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            minHeight: "100vh",
+          }}
+        >
+          {" "}
+          <Container
+            width="100px"
+            sx={{ pt: "60px", pb: "85px", pl: "10px", pr: "10px", margin: 0, width: "350px" }}
+          >
+            <FavFoods />
+          </Container>
+          <Divider orientation="vertical" flexItem />
+          <Container
+            sx={{ pt: "60px", pb: "85px", pl: "10px", pr: "10px", margin: 0, maxWidth: "100%" ,           alignItems: "center",
+            }}
+          >
+            <Planner />
+          </Container>
+        </Box>
 
         <Box
           sx={{
@@ -52,8 +71,8 @@ export default function SlimeRancher2Planner() {
             mt: "auto",
             position: "fixed",
             bottom: 0,
-            width:'100%',
-            height:'85px',
+            width: "100%",
+            height: "85px",
             backgroundColor: (theme) =>
               theme.palette.mode === "light" ? theme.palette.grey[200] : theme.palette.grey[800],
           }}
