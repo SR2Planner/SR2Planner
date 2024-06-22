@@ -5,6 +5,7 @@ import Typography from "@mui/material/Typography";
 import ToggleColorMode from "../util/ToggleColorMode";
 import IconButton from "@mui/material/IconButton";
 import GitHub from "@mui/icons-material/GitHub";
+import Help from '../util/Help'
 
 export default function Header({ mode, toggleColorMode }) {
   return (
@@ -19,15 +20,13 @@ export default function Header({ mode, toggleColorMode }) {
           gap: 2,
         }}
       >
-        <Typography flexGrow="1" variant="h6" fontWeight={600} gutterBottom>
+        <Typography flexGrow="1" variant="h6" fontWeight={600}>
           Slime Rancher 2 Planner
         </Typography>
 
-        <Typography color="text.secondary" variant="body2" gutterBottom>
-          Need Help?
-        </Typography>
-        <Typography color="text.secondary" variant="body2" gutterBottom>
-          Version: 0.1
+        <Help/>
+        <Typography color="text.secondary" variant="body1">
+          Version: 0.0 (lol)
         </Typography>
         <IconButton
           color="inherit"
