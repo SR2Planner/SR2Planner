@@ -1,7 +1,7 @@
 name: Help Request
 description: File a help request for SR2 Planner.
-title: "[Bug]: "
-labels: ["bug", "triage"]
+title: ""
+labels: ["new"]
 projects: ["SR2Planner/1"]
 assignees:
   - SR2Planner
@@ -32,19 +32,13 @@ body:
     id: browsers
     attributes:
       label: What browsers are you using for SR2 Planner?
+      description: In case of a bug report, please select the browsers where you are observing the bug.
       multiple: true
       options:
         - Firefox
         - Chrome
         - Safari
         - Microsoft Edge
-    validations:
-      required: false
-  - type: textarea
-    id: contact
-    attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
+        - Mobile
     validations:
       required: false
