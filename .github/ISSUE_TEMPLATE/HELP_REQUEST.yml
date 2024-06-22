@@ -1,6 +1,6 @@
 name: Help Request
 description: File a help request for SR2 Planner.
-title: ""
+title: "Help Request: "
 labels: ["new"]
 projects: ["SR2Planner/1"]
 assignees:
