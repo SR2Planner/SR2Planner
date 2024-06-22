@@ -1,0 +1,12 @@
+{
+  "files": {
+    "main.css": "/SR2Planner/static/css/main.31d6cfe0.css",
+    "main.js": "/SR2Planner/static/js/main.ff3691f5.js",
+    "index.html": "/SR2Planner/index.html",
+    "main.ff3691f5.js.map": "/SR2Planner/static/js/main.ff3691f5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.31d6cfe0.css",
+    "static/js/main.ff3691f5.js"
+  ]
+}
