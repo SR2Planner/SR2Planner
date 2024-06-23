@@ -50,7 +50,7 @@ export default function SlimeRancher2Planner() {
         >
           {" "}
           <Container
-            width="100px"
+            width="120px"
             sx={{ pt: "60px", pb: "85px", pl: "10px", pr: "10px", margin: 0, width: "350px" }}
           >
             <FavFoods />
