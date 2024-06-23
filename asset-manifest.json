@@ -1,12 +1,14 @@
 {
   "files": {
     "main.css": "/SR2Planner/static/css/main.31d6cfe0.css",
-    "main.js": "/SR2Planner/static/js/main.0afc67d5.js",
+    "main.js": "/SR2Planner/static/js/main.3002a32a.js",
+    "static/media/pinkSlime.png": "/SR2Planner/static/media/pinkSlime.797c94be9972fe68ec4c.png",
+    "static/media/placeholder.png": "/SR2Planner/static/media/placeholder.2f906423baaf896c1827.png",
     "index.html": "/SR2Planner/index.html",
-    "main.0afc67d5.js.map": "/SR2Planner/static/js/main.0afc67d5.js.map"
+    "main.3002a32a.js.map": "/SR2Planner/static/js/main.3002a32a.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.0afc67d5.js"
+    "static/js/main.3002a32a.js"
   ]
 }
