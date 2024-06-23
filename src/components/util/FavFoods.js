@@ -10,25 +10,25 @@ import { Typography } from "@mui/material";
 const rowsFruit = [
   {
     slime: "Phosphor",
-    slimeImage: "placeholder.png",
+    slimeImage: "slimes/phosphor.png",
     food: "Cuberry",
     foodImage: "placeholder.png",
   },
   {
     slime: "Honey",
-    slimeImage: "placeholder.png",
+    slimeImage: "slimes/honey.png",
     food: "Mint Mango",
     foodImage: "placeholder.png",
   },
   {
     slime: "Dervish",
-    slimeImage: "placeholder.png",
+    slimeImage: "slimes/dervish.png",
     food: "Prickle Pear",
     foodImage: "placeholder.png",
   },
   {
     slime: "Batty",
-    slimeImage: "placeholder.png",
+    slimeImage: "slimes/batty.png",
     food: "Pomegranite",
     foodImage: "placeholder.png",
   },
@@ -36,19 +36,19 @@ const rowsFruit = [
 const rowsVeggie = [
   {
     slime: "Rock",
-    slimeImage: "placeholder.png",
+    slimeImage: "slimes/rock.png",
     food: "Heart Beat",
     foodImage: "placeholder.png",
   },
   {
     slime: "Crystal",
-    slimeImage: "placeholder.png",
+    slimeImage: "slimes/crystal.png",
     food: "Odd Onion",
     foodImage: "placeholder.png",
   },
   {
     slime: "Cotton",
-    slimeImage: "placeholder.png",
+    slimeImage: "slimes/cotton.png",
     food: "Water Lettuce",
     foodImage: "placeholder.png",
   },
@@ -56,27 +56,43 @@ const rowsVeggie = [
 const rowsMeat = [
   {
     slime: "Tabby",
-    slimeImage: "placeholder.png",
+    slimeImage: "slimes/tabby.png",
     food: "Stony Hen",
     foodImage: "placeholder.png",
   },
-  { slime: "Boom", slimeImage: "placeholder.png", food: "Briar Hen", foodImage: "placeholder.png" },
-  { slime: "Angler", slimeImage: "placeholder.png", food: "Sea Hen", foodImage: "placeholder.png" },
+  { slime: "Boom", slimeImage: "slimes/boom.png", food: "Briar Hen", foodImage: "placeholder.png" },
+  {
+    slime: "Angler",
+    slimeImage: "slimes/angler.png",
+    food: "Sea Hen",
+    foodImage: "placeholder.png",
+  },
+  {
+    slime: "Tangle",
+    slimeImage: "slimes/tangle.png",
+    food: "Painted Hen",
+    foodImage: "meats/paintedHen.png",
+  },
   {
     slime: "Saber",
-    slimeImage: "placeholder.png",
+    slimeImage: "slimes/saber.png",
     food: "Thundercluck",
     foodImage: "placeholder.png",
   },
-  { slime: "Hunter", slimeImage: "placeholder.png", food: "Roostro", foodImage: "placeholder.png" },
+  {
+    slime: "Hunter",
+    slimeImage: "slimes/hunter.png",
+    food: "Roostro",
+    foodImage: "placeholder.png",
+  },
 ];
 const rowsNoFav = [
-  { slime: "Pink", slimeImage: "placeholder.png", food: "None", foodImage: "placeholder.png" },
+  { slime: "Pink", slimeImage: "slimes/pink.png", food: "None", foodImage: "placeholder.png" },
   {
     slime: "Flutter",
-    slimeImage: "placeholder.png",
+    slimeImage: "slimes/flutter.png",
     food: "Moondew Nectar",
-    foodImage: "placeholder.png",
+    foodImage: "other/moondewNectar.png",
   },
 ];
 
@@ -98,11 +114,9 @@ export default function FavFoods() {
                     alt={row.slime}
                     witdh="20"
                     height="20"
-                  />{" "}
-                  {row.slime}
+                  />
                 </TableCell>
                 <TableCell>
-                  {" "}
                   <img
                     srcSet={require(`../../../public/images/${row.foodImage}`)}
                     src={require(`../../../public/images/${row.foodImage}`)}
@@ -125,18 +139,15 @@ export default function FavFoods() {
             {rowsVeggie.map((row) => (
               <TableRow key={row.slime} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
                 <TableCell>
-                  {" "}
                   <img
                     srcSet={require(`../../../public/images/${row.slimeImage}`)}
                     src={require(`../../../public/images/${row.slimeImage}`)}
                     alt={row.slime}
                     witdh="20"
                     height="20"
-                  />{" "}
-                  {row.slime}
+                  />
                 </TableCell>
                 <TableCell>
-                  {" "}
                   <img
                     srcSet={require(`../../../public/images/${row.foodImage}`)}
                     src={require(`../../../public/images/${row.foodImage}`)}
@@ -159,18 +170,15 @@ export default function FavFoods() {
             {rowsMeat.map((row) => (
               <TableRow key={row.slime} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
                 <TableCell>
-                  {" "}
                   <img
                     srcSet={require(`../../../public/images/${row.slimeImage}`)}
                     src={require(`../../../public/images/${row.slimeImage}`)}
                     alt={row.slime}
                     witdh="20"
                     height="20"
-                  />{" "}
-                  {row.slime}
+                  />
                 </TableCell>
                 <TableCell>
-                  {" "}
                   <img
                     srcSet={require(`../../../public/images/${row.foodImage}`)}
                     src={require(`../../../public/images/${row.foodImage}`)}
@@ -193,7 +201,6 @@ export default function FavFoods() {
             {rowsNoFav.map((row) => (
               <TableRow key={row.slime} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
                 <TableCell>
-                  {" "}
                   <img
                     srcSet={require(`../../../public/images/${row.slimeImage}`)}
                     src={require(`../../../public/images/${row.slimeImage}`)}
@@ -201,10 +208,8 @@ export default function FavFoods() {
                     witdh="20"
                     height="20"
                   />{" "}
-                  {row.slime}
                 </TableCell>
                 <TableCell>
-                  {" "}
                   <img
                     srcSet={require(`../../../public/images/${row.foodImage}`)}
                     src={require(`../../../public/images/${row.foodImage}`)}
@@ -212,7 +217,6 @@ export default function FavFoods() {
                     witdh="20"
                     height="20"
                   />{" "}
-                  {row.food}
                 </TableCell>
               </TableRow>
             ))}

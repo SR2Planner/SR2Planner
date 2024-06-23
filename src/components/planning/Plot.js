@@ -45,33 +45,33 @@ const plotTypes = [
   "Empty",
 ];
 const corralSlimeTypes = [
-  { name: "Angler Slime", image: "placeholder.png" },
-  { name: "Batty Slime", image: "placeholder.png" },
-  { name: "Boom Slime", image: "placeholder.png" },
-  { name: "Cotton Slime", image: "placeholder.png" },
-  { name: "Crystal Slime", image: "placeholder.png" },
-  { name: "Dervish Slime", image: "placeholder.png" },
-  { name: "Flutter Slime", image: "placeholder.png" },
-  { name: "Honey Slime", image: "placeholder.png" },
-  { name: "Hunter Slime", image: "placeholder.png" },
-  { name: "Phosphor Slime", image: "placeholder.png" },
-  { name: "Pink Slime", image: "slimes/pinkSlime.png" },
-  { name: "Ringtail Slime", image: "placeholder.png" },
-  { name: "Rock Slime", image: "placeholder.png" },
-  { name: "Saber Slime", image: "placeholder.png" },
-  { name: "Tabby Slime", image: "placeholder.png" },
-  { name: "Yolky Slime", image: "placeholder.png" },
+  { name: "Angler Slime", image: "slimes/angler.png" },
+  { name: "Batty Slime", image: "slimes/batty.png" },
+  { name: "Boom Slime", image: "slimes/boom.png" },
+  { name: "Cotton Slime", image: "slimes/cotton.png" },
+  { name: "Crystal Slime", image: "slimes/crystal.png" },
+  { name: "Dervish Slime", image: "slimes/dervish.png" },
+  { name: "Flutter Slime", image: "slimes/flutter.png" },
+  { name: "Honey Slime", image: "slimes/honey.png" },
+  { name: "Hunter Slime", image: "slimes/hunter.png" },
+  { name: "Phosphor Slime", image: "slimes/phosphor.png" },
+  { name: "Pink Slime", image: "slimes/pink.png" },
+  { name: "Ringtail Slime", image: "slimes/ringtail.png" },
+  { name: "Rock Slime", image: "slimes/rock.png" },
+  { name: "Saber Slime", image: "slimes/saber.png" },
+  { name: "Tabby Slime", image: "slimes/tabby.png" },
+  { name: "Yolky Slime", image: "slimes/yolky.png" },
   { name: "None", image: "placeholder.png" },
 ];
 const coopTypes = [
   { name: "Briar Hen", image: "placeholder.png" },
   { name: "Hen Hen", image: "placeholder.png" },
-  { name: "Painted Hen", image: "placeholder.png" },
+  { name: "Painted Hen", image: "meats/paintedHen.png" },
   { name: "Sea Hen", image: "placeholder.png" },
   { name: "Stony Hen", image: "placeholder.png" },
   { name: "Thundercluck", image: "placeholder.png" },
   { name: "Mixed Hens", image: "placeholder.png" },
-  { name: "Yolky Slime", image: "placeholder.png" },
+  { name: "Yolky Slime", image: "slimes/yolky.png" },
   { name: "None", image: "placeholder.png" },
 ];
 const fruitTypes = [
@@ -170,11 +170,11 @@ export default function Plot({ plotName }) {
     ) {
       plotContentImages = (
         <Box
-        sx={{
-          display: "flex",
-          flexDirection: "row",
-        }}
-      >
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+          }}
+        >
           <CardMedia
             component="img"
             alt={chosenContent1.name}
@@ -200,13 +200,13 @@ export default function Plot({ plotName }) {
     ) {
       plotContentImages = (
         <CardMedia
-        component="img"
-        alt={chosenContent1.name}
-        height="40"
-        width="40"
-        sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
-        image={require(`../../../public/images/${chosenContent1.image}`)}
-      />
+          component="img"
+          alt={chosenContent1.name}
+          height="40"
+          width="40"
+          sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+          image={require(`../../../public/images/${chosenContent1.image}`)}
+        />
       );
     } else if (
       chosenContent2.name !== undefined &&
@@ -215,13 +215,13 @@ export default function Plot({ plotName }) {
     ) {
       plotContentImages = (
         <CardMedia
-        component="img"
-        alt={chosenContent2.name}
-        height="40"
-        width="40"
-        sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
-        image={require(`../../../public/images/${chosenContent2.image}`)}
-      />
+          component="img"
+          alt={chosenContent2.name}
+          height="40"
+          width="40"
+          sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+          image={require(`../../../public/images/${chosenContent2.image}`)}
+        />
       );
     } else {
       plotContentImages = <div />;
@@ -236,9 +236,10 @@ export default function Plot({ plotName }) {
         <CardActionArea onClick={handleOpen}>
           <CardContent>
             <Typography variant="body2" fontWeight={600}>
-              {plotName}{plotText}
+              {plotName}
+              {plotText}
             </Typography>
-            {plotContentImages} 
+            {plotContentImages}
           </CardContent>
         </CardActionArea>
       </Card>
