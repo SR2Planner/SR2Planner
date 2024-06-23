@@ -70,7 +70,7 @@ const fruitTypes = [
   { name: "Pogofruit", image: "fruits/pogofruit.png" },
   { name: "Pomegranite", image: "fruits/pomegranite.png" },
   { name: "Prickle Pear", image: "fruits/pricklePear.png" },
-  { name: "Mixed Fruits", image: "placeholder.png" },
+  { name: "Mixed Fruits", image: "fruits/mixedFruits.png" },
   { name: "None", image: "placeholder.png" },
 ];
 const veggieTypes = [
@@ -78,7 +78,7 @@ const veggieTypes = [
   { name: "Heart Beat", image: "veggies/heartBeat.png" },
   { name: "Odd Onion", image: "veggies/oddOnion.png" },
   { name: "Water Lettuce", image: "veggies/waterLettuce.png" },
-  { name: "Mixed Veggies", image: "placeholder.png" },
+  { name: "Mixed Veggies", image: "veggies/mixedVeggies.png" },
 
   { name: "None", image: "placeholder.png" },
 ];

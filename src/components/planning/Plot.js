@@ -90,11 +90,11 @@ const veggieTypes = [
   { name: "None", image: "placeholder.png" },
 ];
 const incineratorSlimeTypes = [
-  { name: "Fire", image: "placeholder.png" },
+  { name: "Fire", image: "slimes/fire.png" },
   { name: "None", image: "placeholder.png" },
 ];
 const pondSlimeTypes = [
-  { name: "Puddle", image: "placeholder.png" },
+  { name: "Puddle", image: "slimes/puddle.png" },
   { name: "None", image: "placeholder.png" },
 ];
 
