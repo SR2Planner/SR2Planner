@@ -92,7 +92,7 @@ const rowsMeat = [
   },
 ];
 const rowsNoFav = [
-  { slime: "Pink", slimeImage: "slimes/pink.png", food: "None", foodImage: "placeholder.png" },
+  { slime: "Pink", slimeImage: "slimes/pink.png", food: "None", foodImage: "other/mixed.png" },
   {
     slime: "Flutter",
     slimeImage: "slimes/flutter.png",
