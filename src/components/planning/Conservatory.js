@@ -26,6 +26,12 @@ export default function Conservatory() {
           <Plot plotName="Plot 6"></Plot>
         </Grid>
         <Grid item xs={4}>
+          <Plot plotName="Plot 7"></Plot>
+        </Grid>
+        <Grid item xs={4}>
+          <Plot plotName="Plot 8"></Plot>
+        </Grid>
+        <Grid item xs={4}>
           <FreeRange plotName="Free range"></FreeRange>
         </Grid>
       </Grid>
