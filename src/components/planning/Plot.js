@@ -10,6 +10,8 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardMedia from "@mui/material/CardMedia";
+import Stack from '@mui/material/Stack';
+
 
 const style = {
   position: "absolute",
@@ -67,7 +69,7 @@ const coopTypes = [
   { name: "Briar Hen", image: "meats/briarHen.png" },
   { name: "Hen Hen", image: "meast/henHen.png" },
   { name: "Painted Hen", image: "meats/paintedHen.png" },
-  { name: "Sea Hen", image: "meast/seaHen.png" },
+  { name: "Sea Hen", image: "meats/seaHen.png" },
   { name: "Stony Hen", image: "meats/stonyHen.png" },
   { name: "Thundercluck", image: "meats/Thundercluck.png" },
   { name: "Mixed Meats", image: "meats/mixedMeats.png" },
@@ -100,9 +102,9 @@ const pondSlimeTypes = [
 
 export default function Plot({ plotName }) {
   const [open, setOpen] = React.useState(false);
-  const [chosenPlotType, setChosenPlotType] = React.useState([]);
-  const [chosenContent1, setChosenContent1] = React.useState([]);
-  const [chosenContent2, setChosenContent2] = React.useState([]);
+  const [chosenPlotType, setChosenPlotType] = React.useState("");
+  const [chosenContent1, setChosenContent1] = React.useState("");
+  const [chosenContent2, setChosenContent2] = React.useState("");
   const [contentOptions, setContentOptions] = React.useState(["Choose Plot Type"]);
 
   const handleOpen = () => {
@@ -153,20 +155,20 @@ export default function Plot({ plotName }) {
 
   let plotText = "";
   let plotContentImages = <div />;
-  if (chosenPlotType != "" && chosenPlotType != "Empty") {
+  if (chosenPlotType !== undefined && chosenPlotType !== "" && chosenPlotType !== "Empty") {
     plotText = ` - ${chosenPlotType}`;
   } else {
     plotText = "";
   }
 
-  if (chosenPlotType != "" && chosenPlotType != "Empty") {
+  if (chosenPlotType !== undefined && chosenPlotType !== "" && chosenPlotType !== "Empty") {
     if (
       chosenContent1.name !== undefined &&
       chosenContent2.name !== undefined &&
-      chosenContent1.name != "" &&
-      chosenContent2.name != "" &&
-      chosenContent1.name != "None" &&
-      chosenContent2.name != "None"
+      chosenContent1.name !== "" &&
+      chosenContent2.name !== "" &&
+      chosenContent1.name !== "None" &&
+      chosenContent2.name !== "None"
     ) {
       plotContentImages = (
         <Box
@@ -195,8 +197,8 @@ export default function Plot({ plotName }) {
       );
     } else if (
       chosenContent1.name !== undefined &&
-      chosenContent1.name != "" &&
-      chosenContent1.name != "None"
+      chosenContent1.name !== "" &&
+      chosenContent1.name !== "None"
     ) {
       plotContentImages = (
         <CardMedia
@@ -210,8 +212,8 @@ export default function Plot({ plotName }) {
       );
     } else if (
       chosenContent2.name !== undefined &&
-      chosenContent2.name != "" &&
-      chosenContent2.name != "None"
+      chosenContent2.name !== "" &&
+      chosenContent2.name !== "None"
     ) {
       plotContentImages = (
         <CardMedia
@@ -249,8 +251,8 @@ export default function Plot({ plotName }) {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        <Box sx={style}>
-          <Typography>Plan {plotName}</Typography>
+        <Stack spacing={2} sx={style}>
+        <Typography>Plan {plotName}</Typography>
           <FormControl fullWidth>
             <Select
               displayEmpty
@@ -270,43 +272,51 @@ export default function Plot({ plotName }) {
               ))}
             </Select>
           </FormControl>
-          <FormControl fullWidth>
-            <Select
-              displayEmpty
-              value={chosenContent1}
-              onChange={handleChangeContent1}
-              input={<Input />}
-              MenuProps={MenuProps}
-            >
-              <MenuItem value="">
-                <em>Plot Content 1</em>
-              </MenuItem>
-              {contentOptions.map((content) => (
-                <MenuItem key={content.name} value={content}>
-                  {content.name}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-          <FormControl fullWidth>
-            <Select
-              displayEmpty
-              value={chosenContent2}
-              onChange={handleChangeContent2}
-              input={<Input />}
-              MenuProps={MenuProps}
-            >
-              <MenuItem value="">
-                <em>Plot Content 2</em>
-              </MenuItem>
-              {contentOptions.map((content) => (
-                <MenuItem key={content.name} value={content}>
-                  {content.name}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
-        </Box>
+          {chosenPlotType !== undefined && chosenPlotType !== '' &&
+            chosenPlotType !== "Empty" &&
+            chosenPlotType !== "Silo" && (
+              <>
+                <FormControl fullWidth>
+                  <Select
+                    displayEmpty
+                    value={chosenContent1}
+                    onChange={handleChangeContent1}
+                    input={<Input />}
+                    MenuProps={MenuProps}
+                  >
+                    <MenuItem value="">
+                      <em>Plot Content 1</em>
+                    </MenuItem>
+                    {contentOptions.map((content) => (
+                      <MenuItem key={content.name} value={content}>
+                        {content.name}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </FormControl>
+                {(chosenPlotType === "Corral" || chosenPlotType === "Coop") && (
+                  <FormControl fullWidth>
+                    <Select
+                      displayEmpty
+                      value={chosenContent2}
+                      onChange={handleChangeContent2}
+                      input={<Input />}
+                      MenuProps={MenuProps}
+                    >
+                      <MenuItem value="">
+                        <em>Plot Content 2</em>
+                      </MenuItem>
+                      {contentOptions.map((content) => (
+                        <MenuItem key={content.name} value={content}>
+                          {content.name}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </FormControl>
+                )}
+              </>
+            )}
+        </Stack>
       </Modal>
     </div>
   );

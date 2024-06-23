@@ -10,6 +10,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardMedia from "@mui/material/CardMedia";
+import Stack from '@mui/material/Stack';
 
 const style = {
   position: "absolute",
@@ -20,7 +21,7 @@ const style = {
   bgcolor: "background.paper",
   border: "2px solid #000",
   boxShadow: 24,
-  p: 4,
+  p: 4
 };
 
 const ITEM_HEIGHT = 48;
@@ -34,8 +35,7 @@ const MenuProps = {
   },
 };
 
-const plotTypes = ["Empty", "Slimes", "Hens", "Fruit", "Veggies", "Mixed"];
-const corralSlimeTypes = [
+const freeRangeeTypes = [
   { name: "Angler Slime", image: "slimes/angler.png" },
   { name: "Batty Slime", image: "slimes/batty.png" },
   { name: "Boom Slime", image: "slimes/boom.png" },
@@ -52,9 +52,6 @@ const corralSlimeTypes = [
   { name: "Saber Slime", image: "slimes/saber.png" },
   { name: "Tabby Slime", image: "slimes/tabby.png" },
   { name: "Yolky Slime", image: "slimes/yolky.png" },
-  { name: "None", image: "placeholder.png" },
-];
-const coopTypes = [
   { name: "Briar Hen", image: "meats/briarHen.png" },
   { name: "Hen Hen", image: "meast/henHen.png" },
   { name: "Painted Hen", image: "meats/paintedHen.png" },
@@ -62,32 +59,24 @@ const coopTypes = [
   { name: "Stony Hen", image: "meats/stonyHen.png" },
   { name: "Thundercluck", image: "meats/Thundercluck.png" },
   { name: "Mixed Meats", image: "meats/mixedMeats.png" },
-  { name: "None", image: "placeholder.png" },
-];
-const fruitTypes = [
   { name: "Cuberry", image: "fruits/cuberry.png" },
   { name: "Mint Mango", image: "fruits/mintMango.png" },
   { name: "Pogofruit", image: "fruits/pogofruit.png" },
   { name: "Pomegranite", image: "fruits/pomegranite.png" },
   { name: "Prickle Pear", image: "fruits/pricklePear.png" },
   { name: "Mixed Fruits", image: "fruits/mixedFruits.png" },
-  { name: "None", image: "placeholder.png" },
-];
-const veggieTypes = [
   { name: "Carrot", image: "veggies/carrot.png" },
   { name: "Heart Beat", image: "veggies/heartBeat.png" },
   { name: "Odd Onion", image: "veggies/oddOnion.png" },
   { name: "Water Lettuce", image: "veggies/waterLettuce.png" },
   { name: "Mixed Veggies", image: "veggies/mixedVeggies.png" },
-
   { name: "None", image: "placeholder.png" },
 ];
+
 export default function FreeRangePlanner({ plotName }) {
   const [open, setOpen] = React.useState(false);
-  const [chosenPlotType, setChosenPlotType] = React.useState([]);
   const [chosenContent1, setChosenContent1] = React.useState([]);
   const [chosenContent2, setChosenContent2] = React.useState([]);
-  const [contentOptions, setContentOptions] = React.useState(["Choose Type"]);
 
   const handleOpen = () => {
     setOpen(true);
@@ -95,32 +84,6 @@ export default function FreeRangePlanner({ plotName }) {
 
   const handleClose = () => {
     setOpen(false);
-  };
-
-  const handleChangePlotType = (event) => {
-    setChosenPlotType(event.target.value);
-    switch (event.target.value) {
-      case "Slimes":
-        setContentOptions(corralSlimeTypes);
-        break;
-      case "Hens":
-        setContentOptions(coopTypes);
-        break;
-      case "Fruit":
-        setContentOptions(fruitTypes);
-        break;
-      case "Veggies":
-        setContentOptions(veggieTypes);
-        break;
-      case "Mixed":
-        setContentOptions(
-          corralSlimeTypes.concat(coopTypes).concat(fruitTypes).concat(veggieTypes)
-        );
-        break;
-      case "Empty":
-      default:
-        setContentOptions(["Choose other Type"]);
-    }
   };
 
   const handleChangeContent1 = (event) => {
@@ -131,55 +94,23 @@ export default function FreeRangePlanner({ plotName }) {
     setChosenContent2(event.target.value);
   };
 
-  let plotText = "";
   let plotContentImages = <div />;
 
-  if (chosenPlotType != "" && chosenPlotType != "Empty") {
-    plotText = ` - ${chosenPlotType}`;
-  } else {
-    plotText = "";
-  }
-
-  if (chosenPlotType != "" && chosenPlotType != "Empty") {
-    if (
-      chosenContent1.name !== undefined &&
-      chosenContent2.name !== undefined &&
-      chosenContent1.name != "" &&
-      chosenContent2.name != "" &&
-      chosenContent1.name != "None" &&
-      chosenContent2.name != "None"
-    ) {
-      plotContentImages = (
-        <Box
-          sx={{
-            display: "flex",
-            flexDirection: "row",
-          }}
-        >
-          <CardMedia
-            component="img"
-            alt={chosenContent1.name}
-            height="40"
-            width="40"
-            sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
-            image={require(`../../../public/images/${chosenContent1.image}`)}
-          />
-          <CardMedia
-            component="img"
-            alt={chosenContent2.name}
-            height="40"
-            width="40"
-            sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
-            image={require(`../../../public/images/${chosenContent2.image}`)}
-          />
-        </Box>
-      );
-    } else if (
-      chosenContent1.name !== undefined &&
-      chosenContent1.name != "" &&
-      chosenContent1.name != "None"
-    ) {
-      plotContentImages = (
+  if (
+    chosenContent1.name !== undefined &&
+    chosenContent2.name !== undefined &&
+    chosenContent1.name !== "" &&
+    chosenContent2.name !== "" &&
+    chosenContent1.name !== "None" &&
+    chosenContent2.name !== "None"
+  ) {
+    plotContentImages = (
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+        }}
+      >
         <CardMedia
           component="img"
           alt={chosenContent1.name}
@@ -188,13 +119,6 @@ export default function FreeRangePlanner({ plotName }) {
           sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
           image={require(`../../../public/images/${chosenContent1.image}`)}
         />
-      );
-    } else if (
-      chosenContent2.name !== undefined &&
-      chosenContent2.name != "" &&
-      chosenContent2.name != "None"
-    ) {
-      plotContentImages = (
         <CardMedia
           component="img"
           alt={chosenContent2.name}
@@ -203,10 +127,38 @@ export default function FreeRangePlanner({ plotName }) {
           sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
           image={require(`../../../public/images/${chosenContent2.image}`)}
         />
-      );
-    } else {
-      plotContentImages = <div />;
-    }
+      </Box>
+    );
+  } else if (
+    chosenContent1.name !== undefined &&
+    chosenContent1.name !== "" &&
+    chosenContent1.name !== "None"
+  ) {
+    plotContentImages = (
+      <CardMedia
+        component="img"
+        alt={chosenContent1.name}
+        height="40"
+        width="40"
+        sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+        image={require(`../../../public/images/${chosenContent1.image}`)}
+      />
+    );
+  } else if (
+    chosenContent2.name !== undefined &&
+    chosenContent2.name !== "" &&
+    chosenContent2.name !== "None"
+  ) {
+    plotContentImages = (
+      <CardMedia
+        component="img"
+        alt={chosenContent2.name}
+        height="40"
+        width="40"
+        sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+        image={require(`../../../public/images/${chosenContent2.image}`)}
+      />
+    );
   } else {
     plotContentImages = <div />;
   }
@@ -218,7 +170,6 @@ export default function FreeRangePlanner({ plotName }) {
           <CardContent>
             <Typography variant="body2" fontWeight={600}>
               {plotName}
-              {plotText}
             </Typography>
             {plotContentImages}
           </CardContent>
@@ -230,27 +181,8 @@ export default function FreeRangePlanner({ plotName }) {
         aria-labelledby="simple-modal-title"
         aria-describedby="simple-modal-description"
       >
-        <Box sx={style}>
+        <Stack spacing={2} sx={style}>
           <Typography>Plan {plotName}</Typography>
-          <FormControl fullWidth>
-            <Select
-              displayEmpty
-              id="choose-type-name"
-              value={chosenPlotType}
-              onChange={handleChangePlotType}
-              input={<Input />}
-              MenuProps={MenuProps}
-            >
-              <MenuItem value="">
-                <em>Plot Type</em>
-              </MenuItem>
-              {plotTypes.map((name) => (
-                <MenuItem key={name} value={name}>
-                  {name}
-                </MenuItem>
-              ))}
-            </Select>
-          </FormControl>
           <FormControl fullWidth>
             <Select
               displayEmpty
@@ -262,14 +194,14 @@ export default function FreeRangePlanner({ plotName }) {
               <MenuItem value="">
                 <em>Plot Content 1</em>
               </MenuItem>
-              {contentOptions.map((content) => (
+              {freeRangeeTypes.map((content) => (
                 <MenuItem key={content} value={content}>
                   {content.name}
                 </MenuItem>
               ))}
             </Select>
           </FormControl>
-          <FormControl fullWidth>
+          <FormControl fullWidth >
             <Select
               displayEmpty
               value={chosenContent2}
@@ -280,14 +212,14 @@ export default function FreeRangePlanner({ plotName }) {
               <MenuItem value="">
                 <em>Plot Content 2</em>
               </MenuItem>
-              {contentOptions.map((content) => (
+              {freeRangeeTypes.map((content) => (
                 <MenuItem key={content} value={content}>
                   {content.name}
                 </MenuItem>
               ))}
             </Select>
           </FormControl>
-        </Box>
+        </Stack>
       </Modal>
     </div>
   );
