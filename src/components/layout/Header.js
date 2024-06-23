@@ -30,7 +30,7 @@ export default function Header({ mode, toggleColorMode }) {
         </Typography>
         <IconButton
           color="inherit"
-          href="https://github.com/"
+          href="https://github.com/SR2Planner/SR2Planner"
           aria-label="GitHub"
           sx={{ alignSelf: "center" }}
         >
