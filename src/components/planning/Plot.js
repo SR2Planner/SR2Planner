@@ -64,13 +64,13 @@ const corralSlimeTypes = [
   { name: "None", image: "placeholder.png" },
 ];
 const coopTypes = [
-  { name: "Briar Hen", image: "placeholder.png" },
-  { name: "Hen Hen", image: "placeholder.png" },
+  { name: "Briar Hen", image: "meats/briarHen.png" },
+  { name: "Hen Hen", image: "meast/henHen.png" },
   { name: "Painted Hen", image: "meats/paintedHen.png" },
-  { name: "Sea Hen", image: "placeholder.png" },
-  { name: "Stony Hen", image: "placeholder.png" },
-  { name: "Thundercluck", image: "placeholder.png" },
-  { name: "Mixed Hens", image: "placeholder.png" },
+  { name: "Sea Hen", image: "meast/seaHen.png" },
+  { name: "Stony Hen", image: "meats/stonyHen.png" },
+  { name: "Thundercluck", image: "meats/Thundercluck.png" },
+  { name: "Mixed Meats", image: "meats/mixedMeats.png" },
   { name: "Yolky Slime", image: "slimes/yolky.png" },
   { name: "None", image: "placeholder.png" },
 ];

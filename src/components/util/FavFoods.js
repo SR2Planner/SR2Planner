@@ -58,14 +58,14 @@ const rowsMeat = [
     slime: "Tabby",
     slimeImage: "slimes/tabby.png",
     food: "Stony Hen",
-    foodImage: "placeholder.png",
+    foodImage: "meats/stonyHen.png",
   },
-  { slime: "Boom", slimeImage: "slimes/boom.png", food: "Briar Hen", foodImage: "placeholder.png" },
+  { slime: "Boom", slimeImage: "slimes/boom.png", food: "Briar Hen", foodImage: "meats/briarHen.png" },
   {
     slime: "Angler",
     slimeImage: "slimes/angler.png",
     food: "Sea Hen",
-    foodImage: "placeholder.png",
+    foodImage: "meats/seaHen.png",
   },
   {
     slime: "Tangle",
@@ -77,13 +77,13 @@ const rowsMeat = [
     slime: "Saber",
     slimeImage: "slimes/saber.png",
     food: "Thundercluck",
-    foodImage: "placeholder.png",
+    foodImage: "meats/thundercluck.png",
   },
   {
     slime: "Hunter",
     slimeImage: "slimes/hunter.png",
     food: "Roostro",
-    foodImage: "placeholder.png",
+    foodImage: "meats/roostro.png",
   },
 ];
 const rowsNoFav = [
@@ -101,7 +101,6 @@ export default function FavFoods() {
     <div>
       <Typography variant="h6">Favorite Foods</Typography>
       <br />
-      <Typography variant="body1">Fruit</Typography>
       <TableContainer component={Paper}>
         <Table size="small" aria-label="fav foods table">
           <TableBody>
@@ -132,7 +131,6 @@ export default function FavFoods() {
         </Table>
       </TableContainer>
       <br />
-      <Typography variant="body1">Veggie</Typography>
       <TableContainer component={Paper}>
         <Table size="small" aria-label="fav foods table">
           <TableBody>
@@ -163,7 +161,6 @@ export default function FavFoods() {
         </Table>
       </TableContainer>
       <br />
-      <Typography variant="body1">Meat</Typography>
       <TableContainer component={Paper}>
         <Table size="small" aria-label="fav foods table">
           <TableBody>
@@ -185,8 +182,7 @@ export default function FavFoods() {
                     alt={row.slime}
                     witdh="20"
                     height="20"
-                  />{" "}
-                  {row.food}
+                  />
                 </TableCell>
               </TableRow>
             ))}
@@ -194,7 +190,6 @@ export default function FavFoods() {
         </Table>
       </TableContainer>
       <br />
-      <Typography variant="body1">None & Other</Typography>
       <TableContainer component={Paper}>
         <Table size="small" aria-label="fav foods table">
           <TableBody>
