@@ -38,19 +38,19 @@ const rowsVeggie = [
     slime: "Rock",
     slimeImage: "slimes/rock.png",
     food: "Heart Beat",
-    foodImage: "placeholder.png",
+    foodImage: "veggies/heartBeat.png",
   },
   {
     slime: "Crystal",
     slimeImage: "slimes/crystal.png",
     food: "Odd Onion",
-    foodImage: "placeholder.png",
+    foodImage: "veggies/oddOnion.png",
   },
   {
     slime: "Cotton",
     slimeImage: "slimes/cotton.png",
     food: "Water Lettuce",
-    foodImage: "placeholder.png",
+    foodImage: "veggies/waterLettuce.png",
   },
 ];
 const rowsMeat = [
@@ -152,8 +152,7 @@ export default function FavFoods() {
                     alt={row.slime}
                     witdh="20"
                     height="20"
-                  />{" "}
-                  {row.food}
+                  />
                 </TableCell>
               </TableRow>
             ))}

@@ -83,10 +83,10 @@ const fruitTypes = [
   { name: "None", image: "placeholder.png" },
 ];
 const veggieTypes = [
-  { name: "Carrot", image: "placeholder.png" },
-  { name: "Heart Beat", image: "placeholder.png" },
-  { name: "Odd Onion", image: "placeholder.png" },
-  { name: "Water Lettuce", image: "placeholder.png" },
+  { name: "Carrot", image: "veggies/carrot.png" },
+  { name: "Heart Beat", image: "veggies/heartBeat.png" },
+  { name: "Odd Onion", image: "veggies/oddOnion.png" },
+  { name: "Water Lettuce", image: "veggies/waterLettuce.png" },
   { name: "None", image: "placeholder.png" },
 ];
 const incineratorSlimeTypes = [
