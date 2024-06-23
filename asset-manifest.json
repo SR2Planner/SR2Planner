@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/SR2Planner/static/css/main.d498bfb3.chunk.css",
-    "main.js": "/SR2Planner/static/js/main.41597ea3.chunk.js",
-    "main.js.map": "/SR2Planner/static/js/main.41597ea3.chunk.js.map",
+    "main.js": "/SR2Planner/static/js/main.865bfca6.chunk.js",
+    "main.js.map": "/SR2Planner/static/js/main.865bfca6.chunk.js.map",
     "runtime-main.js": "/SR2Planner/static/js/runtime-main.447e9164.js",
     "runtime-main.js.map": "/SR2Planner/static/js/runtime-main.447e9164.js.map",
     "static/js/2.a927b8d8.chunk.js": "/SR2Planner/static/js/2.a927b8d8.chunk.js",
     "static/js/2.a927b8d8.chunk.js.map": "/SR2Planner/static/js/2.a927b8d8.chunk.js.map",
     "index.html": "/SR2Planner/index.html",
-    "precache-manifest.89ad7a1455df4d277942ec949824f083.js": "/SR2Planner/precache-manifest.89ad7a1455df4d277942ec949824f083.js",
+    "precache-manifest.4f1192e4e0a4a555f4ebfe54052341d6.js": "/SR2Planner/precache-manifest.4f1192e4e0a4a555f4ebfe54052341d6.js",
     "service-worker.js": "/SR2Planner/service-worker.js",
     "static/css/main.d498bfb3.chunk.css.map": "/SR2Planner/static/css/main.d498bfb3.chunk.css.map",
     "static/js/2.a927b8d8.chunk.js.LICENSE.txt": "/SR2Planner/static/js/2.a927b8d8.chunk.js.LICENSE.txt",
@@ -58,6 +58,6 @@
     "static/js/runtime-main.447e9164.js",
     "static/js/2.a927b8d8.chunk.js",
     "static/css/main.d498bfb3.chunk.css",
-    "static/js/main.41597ea3.chunk.js"
+    "static/js/main.865bfca6.chunk.js"
   ]
 }
