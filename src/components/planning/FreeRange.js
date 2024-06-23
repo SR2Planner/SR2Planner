@@ -65,11 +65,11 @@ const coopTypes = [
   { name: "None", image: "placeholder.png" },
 ];
 const fruitTypes = [
-  { name: "Cuberry", image: "placeholder.png" },
-  { name: "Mint Mango", image: "placeholder.png" },
-  { name: "Pogofruit", image: "placeholder.png" },
-  { name: "Pomegranite", image: "placeholder.png" },
-  { name: "Prickle Pear", image: "placeholder.png" },
+  { name: "Cuberry", image: "fruits/cuberry.png" },
+  { name: "Mint Mango", image: "fruits/mintMango.png" },
+  { name: "Pogofruit", image: "fruits/pogofruit.png" },
+  { name: "Pomegranite", image: "fruits/pomegranite.png" },
+  { name: "Prickle Pear", image: "fruits/pricklePear.png" },
   { name: "Mixed Fruits", image: "placeholder.png" },
   { name: "None", image: "placeholder.png" },
 ];
@@ -214,7 +214,7 @@ export default function FreeRangePlanner({ plotName }) {
   return (
     <div>
       <Card>
-      <CardActionArea onClick={handleOpen}>
+        <CardActionArea onClick={handleOpen}>
           <CardContent>
             <Typography variant="body2" fontWeight={600}>
               {plotName}

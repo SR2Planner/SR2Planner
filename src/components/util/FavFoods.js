@@ -12,25 +12,25 @@ const rowsFruit = [
     slime: "Phosphor",
     slimeImage: "slimes/phosphor.png",
     food: "Cuberry",
-    foodImage: "placeholder.png",
+    foodImage: "fruits/cuberry.png",
   },
   {
     slime: "Honey",
     slimeImage: "slimes/honey.png",
     food: "Mint Mango",
-    foodImage: "placeholder.png",
+    foodImage: "fruits/mintMango.png",
   },
   {
     slime: "Dervish",
     slimeImage: "slimes/dervish.png",
     food: "Prickle Pear",
-    foodImage: "placeholder.png",
+    foodImage: "fruits/pricklePear.png",
   },
   {
     slime: "Batty",
     slimeImage: "slimes/batty.png",
     food: "Pomegranite",
-    foodImage: "placeholder.png",
+    foodImage: "fruits/pomegranite.png",
   },
 ];
 const rowsVeggie = [
@@ -60,7 +60,12 @@ const rowsMeat = [
     food: "Stony Hen",
     foodImage: "meats/stonyHen.png",
   },
-  { slime: "Boom", slimeImage: "slimes/boom.png", food: "Briar Hen", foodImage: "meats/briarHen.png" },
+  {
+    slime: "Boom",
+    slimeImage: "slimes/boom.png",
+    food: "Briar Hen",
+    foodImage: "meats/briarHen.png",
+  },
   {
     slime: "Angler",
     slimeImage: "slimes/angler.png",
@@ -99,7 +104,9 @@ const rowsNoFav = [
 export default function FavFoods() {
   return (
     <div>
-      <Typography variant="h6">Favorite Foods</Typography>
+      <Typography variant="h6" align="center">
+        Favorite Foods
+      </Typography>
       <br />
       <TableContainer component={Paper}>
         <Table size="small" aria-label="fav foods table">
@@ -122,8 +129,7 @@ export default function FavFoods() {
                     alt={row.slime}
                     witdh="20"
                     height="20"
-                  />{" "}
-                  {row.food}
+                  />
                 </TableCell>
               </TableRow>
             ))}

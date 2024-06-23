@@ -50,14 +50,21 @@ export default function SlimeRancher2Planner() {
         >
           {" "}
           <Container
-            width="120px"
-            sx={{ pt: "60px", pb: "85px", pl: "10px", pr: "10px", margin: 0, width: "350px" }}
+            width="50px"
+            sx={{ pt: "60px", pb: "85px", pl: "10px", pr: "10px", margin: 0, width: "150px" }}
           >
             <FavFoods />
           </Container>
           <Divider orientation="vertical" flexItem />
           <Container
-            sx={{ pt: "60px", pb: "85px", pl: "10px", pr: "10px", margin: 0, maxWidth: "100%" ,           alignItems: "center",
+            sx={{
+              pt: "60px",
+              pb: "85px",
+              pl: "10px",
+              pr: "10px",
+              margin: 0,
+              maxWidth: "100%",
+              alignItems: "center",
             }}
           >
             <Planner />
