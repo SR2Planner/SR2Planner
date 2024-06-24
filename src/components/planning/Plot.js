@@ -100,7 +100,7 @@ const pondSlimeTypes = [
   { name: "None", image: "placeholder.png" },
 ];
 
-export default function Plot({ plotName }) {
+export default function Plot({ plot }) {
   const [open, setOpen] = React.useState(false);
   const [chosenPlotType, setChosenPlotType] = React.useState("");
   const [chosenContent1, setChosenContent1] = React.useState("");
@@ -156,7 +156,7 @@ export default function Plot({ plotName }) {
   let plotText = "";
   let plotContentImages = <div />;
   if (chosenPlotType !== undefined && chosenPlotType !== "" && chosenPlotType !== "Empty") {
-    plotText = ` - ${chosenPlotType}`;
+    plotText = `${chosenPlotType}`;
   } else {
     plotText = "";
   }
@@ -180,17 +180,13 @@ export default function Plot({ plotName }) {
           <CardMedia
             component="img"
             alt={chosenContent1.name}
-            height="40"
-            width="40"
-            sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+            sx={{ padding: "0",width:"25px", objectFit: "contain" }}
             image={require(`../../../public/images/${chosenContent1.image}`)}
           />
           <CardMedia
             component="img"
             alt={chosenContent2.name}
-            height="40"
-            width="40"
-            sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+            sx={{ padding: "0", width:"25px", objectFit: "contain" }}
             image={require(`../../../public/images/${chosenContent2.image}`)}
           />
         </Box>
@@ -204,9 +200,7 @@ export default function Plot({ plotName }) {
         <CardMedia
           component="img"
           alt={chosenContent1.name}
-          height="40"
-          width="40"
-          sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+          sx={{ padding: "0", width:"25px",objectFit: "contain" }}
           image={require(`../../../public/images/${chosenContent1.image}`)}
         />
       );
@@ -219,9 +213,7 @@ export default function Plot({ plotName }) {
         <CardMedia
           component="img"
           alt={chosenContent2.name}
-          height="40"
-          width="40"
-          sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+          sx={{ padding: "0", width:"25px",objectFit: "contain" }}
           image={require(`../../../public/images/${chosenContent2.image}`)}
         />
       );
@@ -234,11 +226,22 @@ export default function Plot({ plotName }) {
 
   return (
     <div>
-      <Card>
-        <CardActionArea onClick={handleOpen}>
-          <CardContent>
-            <Typography variant="body2" fontWeight={600}>
-              {plotName}
+      <Card sx={{
+        height: "50px", width: "50px",
+          position: "absolute",
+          left: plot.left, 
+          top: plot.top
+        }}>
+        <CardActionArea onClick={handleOpen} sx={{
+        height: "50px", width: "50px"
+        }}>
+          <CardContent sx={{
+        height: "50px", width: "50px", display:"flex", flexDirection:"column",
+          padding:"0px", alignItems:"center", justifyContent:"center"
+        }} >
+            <Typography variant="caption" sx={{
+          paddingBottom:"3px"
+        }}>
               {plotText}
             </Typography>
             {plotContentImages}
@@ -252,7 +255,6 @@ export default function Plot({ plotName }) {
         aria-describedby="simple-modal-description"
       >
         <Stack spacing={2} sx={style}>
-        <Typography>Plan {plotName}</Typography>
           <FormControl fullWidth>
             <Select
               displayEmpty
