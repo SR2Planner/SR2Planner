@@ -1,63 +1,60 @@
 import * as React from "react";
-import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/Typography";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
 import Plot from "../planning/Plot";
 
 const plotsGully = [
-  { id: "plot1", top: 70, left: 325 },
-  { id: "plot2", top: 135, left: 265 },
-  { id: "plot2", top: 135, left: 325 },
-  { id: "plot2", top: 135, left: 385 },
-  { id: "plot2", top: 200, left: 325 },
+  { id: "plot1", top: 67, left: 375 },
+  { id: "plot2", top: 130, left: 305 },
+  { id: "plot2", top: 130, left: 360 },
+  { id: "plot2", top: 130, left: 425 },
+  { id: "plot2", top: 200, left: 375 },
 ];
 
 const plotsTidepools = [
-  { id: "plot1", top: 70, left: 525 },
-  { id: "plot2", top: 70, left: 606 },
-  { id: "plot2", top: 125, left: 554 },
-  { id: "plot2", top: 125, left: 616 },
-  { id: "plot2", top: 180, left: 605 },
+  { id: "plot1", top: 67, left: 580 },
+  { id: "plot2", top: 67, left: 655 },
+  { id: "plot2", top: 125, left: 620 },
+  { id: "plot2", top: 125, left: 675 },
+  { id: "plot2", top: 183, left: 655 },
 ];
 
 const plotsConservatory = [
-  { id: "plot1", top: 365, left: 190 },
-  { id: "plot2", top: 365, left: 244 },
-  { id: "plot2", top: 439, left: 230 },
-  { id: "plot2", top: 439, left: 342 },
-  { id: "plot2", top: 491, left: 178 },
-  { id: "plot2", top: 491, left: 230 },
-  { id: "plot2", top: 491, left: 282 },
-  { id: "plot2", top: 491, left: 342 },
+  { id: "plot1", top: 385, left: 222 },
+  { id: "plot2", top: 385, left: 275 },
+  { id: "plot2", top: 460, left: 365 },
+  { id: "plot2", top: 513, left: 365 },
+  { id: "plot2", top: 488, left: 250 },
+  { id: "plot2", top: 541, left: 197 },
+  { id: "plot2", top: 541, left: 250 },
+  { id: "plot2", top: 541, left: 303 },
 ];
 
 const plotsArchway = [
-  { id: "plot1", top: 392, left: 584 },
-  { id: "plot2", top: 470, left: 584 },
-  { id: "plot2", top: 400, left: 643 },
-  { id: "plot2", top: 430, left: 698 },
-  { id: "plot2", top: 485, left: 643 },
+  { id: "plot1", top: 409, left: 647 },
+  { id: "plot2", top: 480, left: 625 },
+  { id: "plot2", top: 426, left: 708 },
+  { id: "plot2", top: 480, left: 745 },
+  { id: "plot2", top: 510, left: 690 },
 ];
 
 const plotsDen = [
-  { id: "plot1", top: 695, left: 370 },
-  { id: "plot2", top: 695, left: 425 },
-  { id: "plot2", top: 755, left: 370 },
-  { id: "plot2", top: 755, left: 425 },
-  { id: "plot2", top: 730, left: 480 },
+  { id: "plot1", top: 733, left: 400 },
+  { id: "plot2", top: 733, left: 453 },
+  { id: "plot2", top: 785, left: 400 },
+  { id: "plot2", top: 785, left: 453 },
+  { id: "plot2", top: 785, left: 518 },
 ];
 
 const plotsDigsite = [
-  { id: "plot1", top: 770, left: 584 },
-  { id: "plot2", top: 790, left: 655 },
-  { id: "plot2", top: 790, left: 710 },
-  { id: "plot2", top: 735, left: 745 },
+  { id: "plot1", top: 650, left: 693 },
+  { id: "plot2", top: 730, left: 681 },
+  { id: "plot2", top: 785, left: 681 },
+  { id: "plot2", top: 785, left: 734 },
 ];
 export default function Planner() {
   return (
-    <div>
-      <img src={require(`./mapnew.png`)} width="670px"></img>
+    <div >
+
+      <img src={require(`./mapDetail.png`)} width="780px"></img>
       {plotsGully.map((plot) => (
         <Plot plot={plot}></Plot>
       ))}

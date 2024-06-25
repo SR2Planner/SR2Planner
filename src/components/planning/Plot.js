@@ -10,8 +10,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardMedia from "@mui/material/CardMedia";
-import Stack from '@mui/material/Stack';
-
+import Stack from "@mui/material/Stack";
 
 const style = {
   position: "absolute",
@@ -180,13 +179,13 @@ export default function Plot({ plot }) {
           <CardMedia
             component="img"
             alt={chosenContent1.name}
-            sx={{ padding: "0",width:"25px", objectFit: "contain" }}
+            sx={{ padding: "0", width: "25px", objectFit: "contain" }}
             image={require(`../../../public/images/${chosenContent1.image}`)}
           />
           <CardMedia
             component="img"
             alt={chosenContent2.name}
-            sx={{ padding: "0", width:"25px", objectFit: "contain" }}
+            sx={{ padding: "0", width: "25px", objectFit: "contain" }}
             image={require(`../../../public/images/${chosenContent2.image}`)}
           />
         </Box>
@@ -200,7 +199,7 @@ export default function Plot({ plot }) {
         <CardMedia
           component="img"
           alt={chosenContent1.name}
-          sx={{ padding: "0", width:"25px",objectFit: "contain" }}
+          sx={{ padding: "0", width: "25px", objectFit: "contain" }}
           image={require(`../../../public/images/${chosenContent1.image}`)}
         />
       );
@@ -213,7 +212,7 @@ export default function Plot({ plot }) {
         <CardMedia
           component="img"
           alt={chosenContent2.name}
-          sx={{ padding: "0", width:"25px",objectFit: "contain" }}
+          sx={{ padding: "0", width: "25px", objectFit: "contain" }}
           image={require(`../../../public/images/${chosenContent2.image}`)}
         />
       );
@@ -226,22 +225,39 @@ export default function Plot({ plot }) {
 
   return (
     <div>
-      <Card sx={{
-        height: "50px", width: "50px",
+      <Card
+        sx={{
+          height: "50px",
+          width: "50px",
           position: "absolute",
-          left: plot.left, 
-          top: plot.top
-        }}>
-        <CardActionArea onClick={handleOpen} sx={{
-        height: "50px", width: "50px"
-        }}>
-          <CardContent sx={{
-        height: "50px", width: "50px", display:"flex", flexDirection:"column",
-          padding:"0px", alignItems:"center", justifyContent:"center"
-        }} >
-            <Typography variant="caption" sx={{
-          paddingBottom:"3px"
-        }}>
+          left: plot.left,
+          top: plot.top,
+        }}
+      >
+        <CardActionArea
+          onClick={handleOpen}
+          sx={{
+            height: "50px",
+            width: "50px",
+          }}
+        >
+          <CardContent
+            sx={{
+              height: "50px",
+              width: "50px",
+              display: "flex",
+              flexDirection: "column",
+              padding: "0px",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Typography
+              variant="caption"
+              sx={{
+                paddingBottom: "3px",
+              }}
+            >
               {plotText}
             </Typography>
             {plotContentImages}
@@ -274,7 +290,8 @@ export default function Plot({ plot }) {
               ))}
             </Select>
           </FormControl>
-          {chosenPlotType !== undefined && chosenPlotType !== '' &&
+          {chosenPlotType !== undefined &&
+            chosenPlotType !== "" &&
             chosenPlotType !== "Empty" &&
             chosenPlotType !== "Silo" && (
               <>
