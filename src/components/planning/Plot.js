@@ -36,14 +36,14 @@ const MenuProps = {
 };
 
 const plotTypes = [
-  "Corral",
-  "Coop",
-  "Fruit Tree",
-  "Veggie Patch",
-  "Incinerator",
-  "Pond",
-  "Silo",
-  "Empty",
+  { name: "Corral", image: "plots/corral.png" },
+  { name: "Coop", image: "plots/coop.png" },
+  { name: "Fruit Tree", image: "plots/garden.png" },
+  { name: "Veggie Patch", image: "plots/garden.png" },
+  { name: "Incinerator", image: "plots/incinerator.png" },
+  { name: "Pond", image: "plots/pond.png" },
+  { name: "Silo", image: "plots/silo.png" },
+  { name: "Empty", image: "placeholder.png" },
 ];
 const corralSlimeTypes = [
   { name: "Angler Slime", image: "slimes/angler.png" },
@@ -116,7 +116,7 @@ export default function Plot({ plot }) {
 
   const handleChangePlotType = (event) => {
     setChosenPlotType(event.target.value);
-    switch (event.target.value) {
+    switch (event.target.value.name) {
       case "Corral":
         setContentOptions(corralSlimeTypes);
         break;
@@ -154,13 +154,21 @@ export default function Plot({ plot }) {
 
   let plotText = "Plot";
   let plotContentImages = <div />;
-  if (chosenPlotType !== undefined && chosenPlotType !== "" && chosenPlotType !== "Empty") {
-    plotText = `${chosenPlotType}`;
+  if (
+    chosenPlotType.name !== undefined &&
+    chosenPlotType.name !== "" &&
+    chosenPlotType.name !== "Empty"
+  ) {
+    plotText = `${chosenPlotType.name}`;
   } else {
     plotText = "";
   }
 
-  if (chosenPlotType !== undefined && chosenPlotType !== "" && chosenPlotType !== "Empty") {
+  if (
+    chosenPlotType.name !== undefined &&
+    chosenPlotType.name !== "" &&
+    chosenPlotType.name !== "Empty"
+  ) {
     if (
       chosenContent1.name !== undefined &&
       chosenContent2.name !== undefined &&
@@ -214,6 +222,23 @@ export default function Plot({ plot }) {
           alt={chosenContent2.name}
           sx={{ padding: "0", width: "25px", objectFit: "contain" }}
           image={require(`../../../public/images/${chosenContent2.image}`)}
+        />
+      );
+    } else if (
+      chosenPlotType.name !== undefined &&
+      (chosenContent1.name === undefined ||
+        chosenContent1.name === "" ||
+        chosenContent1.name === "None") &&
+      (chosenContent2.name === undefined ||
+        chosenContent2.name === "" ||
+        chosenContent2.name === "None")
+    ) {
+      plotContentImages = (
+        <CardMedia
+          component="img"
+          alt={chosenPlotType.name}
+          sx={{ padding: "0", width: "25px", objectFit: "contain" }}
+          image={require(`../../../public/images/${chosenPlotType.image}`)}
         />
       );
     } else {
@@ -284,17 +309,17 @@ export default function Plot({ plot }) {
               <MenuItem value="">
                 <em>Plot Type</em>
               </MenuItem>
-              {plotTypes.map((name) => (
-                <MenuItem key={name} value={name}>
-                  {name}
+              {plotTypes.map((plotType) => (
+                <MenuItem key={plotType.name} value={plotType}>
+                  {plotType.name}
                 </MenuItem>
               ))}
             </Select>
           </FormControl>
-          {chosenPlotType !== undefined &&
-            chosenPlotType !== "" &&
-            chosenPlotType !== "Empty" &&
-            chosenPlotType !== "Silo" && (
+          {chosenPlotType.name !== undefined &&
+            chosenPlotType.name !== "" &&
+            chosenPlotType.name !== "Empty" &&
+            chosenPlotType.name !== "Silo" && (
               <>
                 <FormControl fullWidth>
                   <Select
@@ -314,7 +339,7 @@ export default function Plot({ plot }) {
                     ))}
                   </Select>
                 </FormControl>
-                {(chosenPlotType === "Corral" || chosenPlotType === "Coop") && (
+                {(chosenPlotType.name === "Corral" || chosenPlotType.name === "Coop") && (
                   <FormControl fullWidth>
                     <Select
                       displayEmpty

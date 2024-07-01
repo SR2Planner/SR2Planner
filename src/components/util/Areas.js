@@ -18,7 +18,7 @@ const areas = [
   },
   {
     name: "The Conservatory",
-    image: "placeholder.png",
+    image: "areas/conservatory.png",
     color: "rgba(53, 92, 160, 1)",
   },
   {

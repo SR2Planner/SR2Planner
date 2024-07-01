@@ -10,6 +10,7 @@ import Planner from "./components/layout/Planner";
 import FavFoods from "./components/util/FavFoods";
 import Areas from "./components/util/Areas";
 import Divider from "@mui/material/Divider";
+import PlanningOverview from "./components/util/PlanningOverview";
 
 export default function SlimeRancher2Planner() {
   const [mode, setMode] = React.useState("light");
@@ -73,9 +74,22 @@ export default function SlimeRancher2Planner() {
           </Container>
           <Divider orientation="vertical" flexItem />
           <Container
-            sx={{ pt: "60px", pb: "85px", pl: "10px", pr: "10px", margin: 0, minWidth: "350px" }}
+            width="500px"
+            sx={{
+              pt: "60px",
+              pb: "85px",
+              minWidth: "500px",
+              display: "flex",
+              flexDirection: "column",
+            }}
           >
-            <Areas />
+            <Container>
+              <Areas />
+            </Container>
+            <Divider orientation="horizontal" flexItem sx={{pt:"24px", pb:"24px"}}/>
+            <Container>
+              <PlanningOverview />
+            </Container>
           </Container>
         </Box>
 
