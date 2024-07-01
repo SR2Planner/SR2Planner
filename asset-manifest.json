@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/SR2Planner/static/css/main.d498bfb3.chunk.css",
-    "main.js": "/SR2Planner/static/js/main.865bfca6.chunk.js",
-    "main.js.map": "/SR2Planner/static/js/main.865bfca6.chunk.js.map",
+    "main.js": "/SR2Planner/static/js/main.6069d7f9.chunk.js",
+    "main.js.map": "/SR2Planner/static/js/main.6069d7f9.chunk.js.map",
     "runtime-main.js": "/SR2Planner/static/js/runtime-main.447e9164.js",
     "runtime-main.js.map": "/SR2Planner/static/js/runtime-main.447e9164.js.map",
-    "static/js/2.a927b8d8.chunk.js": "/SR2Planner/static/js/2.a927b8d8.chunk.js",
-    "static/js/2.a927b8d8.chunk.js.map": "/SR2Planner/static/js/2.a927b8d8.chunk.js.map",
+    "static/js/2.ee034519.chunk.js": "/SR2Planner/static/js/2.ee034519.chunk.js",
+    "static/js/2.ee034519.chunk.js.map": "/SR2Planner/static/js/2.ee034519.chunk.js.map",
     "index.html": "/SR2Planner/index.html",
-    "precache-manifest.4f1192e4e0a4a555f4ebfe54052341d6.js": "/SR2Planner/precache-manifest.4f1192e4e0a4a555f4ebfe54052341d6.js",
+    "precache-manifest.eeef8ccc23a213a138dce110071ea982.js": "/SR2Planner/precache-manifest.eeef8ccc23a213a138dce110071ea982.js",
     "service-worker.js": "/SR2Planner/service-worker.js",
     "static/css/main.d498bfb3.chunk.css.map": "/SR2Planner/static/css/main.d498bfb3.chunk.css.map",
-    "static/js/2.a927b8d8.chunk.js.LICENSE.txt": "/SR2Planner/static/js/2.a927b8d8.chunk.js.LICENSE.txt",
+    "static/js/2.ee034519.chunk.js.LICENSE.txt": "/SR2Planner/static/js/2.ee034519.chunk.js.LICENSE.txt",
     "static/media/angler.png": "/SR2Planner/static/media/angler.6f0cfe58.png",
     "static/media/batty.png": "/SR2Planner/static/media/batty.4e9628cf.png",
     "static/media/boom.png": "/SR2Planner/static/media/boom.e9c80f83.png",
@@ -27,6 +27,7 @@
     "static/media/henHen.png": "/SR2Planner/static/media/henHen.46a69def.png",
     "static/media/honey.png": "/SR2Planner/static/media/honey.1dff5499.png",
     "static/media/hunter.png": "/SR2Planner/static/media/hunter.06bea272.png",
+    "static/media/map.png": "/SR2Planner/static/media/map.83a284d7.png",
     "static/media/mintMango.png": "/SR2Planner/static/media/mintMango.283115ed.png",
     "static/media/mixed.png": "/SR2Planner/static/media/mixed.8ed5c69b.png",
     "static/media/mixedFruits.png": "/SR2Planner/static/media/mixedFruits.6d75eb02.png",
@@ -56,8 +57,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.447e9164.js",
-    "static/js/2.a927b8d8.chunk.js",
+    "static/js/2.ee034519.chunk.js",
     "static/css/main.d498bfb3.chunk.css",
-    "static/js/main.865bfca6.chunk.js"
+    "static/js/main.6069d7f9.chunk.js"
   ]
 }
