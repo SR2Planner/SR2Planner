@@ -255,7 +255,8 @@ export default function Plot({ plot }) {
             <Typography
               variant="caption"
               sx={{
-                paddingBottom: "3px", fontSize:"0.48rem"
+                paddingBottom: "3px",
+                fontSize: "0.48rem",
               }}
             >
               {plotText}

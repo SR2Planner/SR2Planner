@@ -57,14 +57,13 @@ const freeRange = [
   { id: "frTp", top: 240, left: 460 },
   { id: "frCv", top: 340, left: 360 },
   { id: "frAw", top: 340, left: 630 },
-   { id: "frDn", top: 615, left: 360 },
-    { id: "frDs", top: 615, left: 630 },
+  { id: "frDn", top: 615, left: 360 },
+  { id: "frDs", top: 615, left: 630 },
 ];
 export default function Planner() {
   return (
-    <div >
-
-      <img src={require(`./map.png`)} height="790px"></img>
+    <div>
+      <img src={require(`./map.png`)} alt="Slime Rancher 2 Conservatory map" height="790px"></img>
       {plotsGully.map((plot) => (
         <Plot plot={plot}></Plot>
       ))}
@@ -83,10 +82,9 @@ export default function Planner() {
       {plotsDigsite.map((plot) => (
         <Plot plot={plot}></Plot>
       ))}
-            {freeRange.map((plot) => (
-              <FreeRange plot={plot}></FreeRange>
-            ))}
-
+      {freeRange.map((plot) => (
+        <FreeRange plot={plot}></FreeRange>
+      ))}
     </div>
   );
 }
