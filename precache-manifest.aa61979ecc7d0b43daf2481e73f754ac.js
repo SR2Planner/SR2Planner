@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "42d5f7ebc70869d916854a7f3264d9a6",
+    "revision": "481be2b8bea877b4587044e271dee770",
     "url": "/SR2Planner/index.html"
   },
   {
-    "revision": "b4a53e22de3ba699060d",
+    "revision": "31c3101d10d28114d312",
     "url": "/SR2Planner/static/css/main.d498bfb3.chunk.css"
   },
   {
-    "revision": "f43ca3204f1f80347e7c",
-    "url": "/SR2Planner/static/js/2.ee034519.chunk.js"
+    "revision": "17432a21d92c221bb524",
+    "url": "/SR2Planner/static/js/2.6db63fd0.chunk.js"
   },
   {
     "revision": "e65922e1a95aafdda6f547e02a94b171",
-    "url": "/SR2Planner/static/js/2.ee034519.chunk.js.LICENSE.txt"
+    "url": "/SR2Planner/static/js/2.6db63fd0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "b4a53e22de3ba699060d",
-    "url": "/SR2Planner/static/js/main.6069d7f9.chunk.js"
+    "revision": "31c3101d10d28114d312",
+    "url": "/SR2Planner/static/js/main.f8cc0dc1.chunk.js"
   },
   {
     "revision": "4d04d07f31b723a3721d",
@@ -26,6 +26,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "6f0cfe58d0205db62497f5146494ef6a",
     "url": "/SR2Planner/static/media/angler.6f0cfe58.png"
+  },
+  {
+    "revision": "6447b3e801e5a1cdc848ebbed4962dc4",
+    "url": "/SR2Planner/static/media/archway.6447b3e8.png"
   },
   {
     "revision": "4e9628cf876ad2bafb34e8c37012bd34",
@@ -56,8 +60,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SR2Planner/static/media/cuberry.e7205c61.png"
   },
   {
+    "revision": "a01e02b79fdf93e977a2c5d826079b13",
+    "url": "/SR2Planner/static/media/den.a01e02b7.png"
+  },
+  {
     "revision": "7dbe54b3c2a0f1462a886a3d693efbcc",
     "url": "/SR2Planner/static/media/dervish.7dbe54b3.png"
+  },
+  {
+    "revision": "e39a064566587afe14f504cbc85037a0",
+    "url": "/SR2Planner/static/media/digsite.e39a0645.png"
   },
   {
     "revision": "cd9d22bc64fe385d6e9c325659c81ac2",
@@ -66,6 +78,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "a604538bb070bab99fab53c1b8cea40a",
     "url": "/SR2Planner/static/media/flutter.a604538b.png"
+  },
+  {
+    "revision": "bfc0cc0eb6ce5e92a2b0157383b1cf0c",
+    "url": "/SR2Planner/static/media/gully.bfc0cc0e.png"
   },
   {
     "revision": "0bca6e19b7555d931adb0abe26d8dab8",
@@ -182,6 +198,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "0e43afb2054f3474d94930531301d6c6",
     "url": "/SR2Planner/static/media/thundercluck.0e43afb2.png"
+  },
+  {
+    "revision": "d1d4c2d429a81fff3948b05a25fc4209",
+    "url": "/SR2Planner/static/media/tidepools.d1d4c2d4.png"
   },
   {
     "revision": "5618063cef466934c534172e3c2e8912",

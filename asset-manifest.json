@@ -1,18 +1,19 @@
 {
   "files": {
     "main.css": "/SR2Planner/static/css/main.d498bfb3.chunk.css",
-    "main.js": "/SR2Planner/static/js/main.6069d7f9.chunk.js",
-    "main.js.map": "/SR2Planner/static/js/main.6069d7f9.chunk.js.map",
+    "main.js": "/SR2Planner/static/js/main.f8cc0dc1.chunk.js",
+    "main.js.map": "/SR2Planner/static/js/main.f8cc0dc1.chunk.js.map",
     "runtime-main.js": "/SR2Planner/static/js/runtime-main.447e9164.js",
     "runtime-main.js.map": "/SR2Planner/static/js/runtime-main.447e9164.js.map",
-    "static/js/2.ee034519.chunk.js": "/SR2Planner/static/js/2.ee034519.chunk.js",
-    "static/js/2.ee034519.chunk.js.map": "/SR2Planner/static/js/2.ee034519.chunk.js.map",
+    "static/js/2.6db63fd0.chunk.js": "/SR2Planner/static/js/2.6db63fd0.chunk.js",
+    "static/js/2.6db63fd0.chunk.js.map": "/SR2Planner/static/js/2.6db63fd0.chunk.js.map",
     "index.html": "/SR2Planner/index.html",
-    "precache-manifest.eeef8ccc23a213a138dce110071ea982.js": "/SR2Planner/precache-manifest.eeef8ccc23a213a138dce110071ea982.js",
+    "precache-manifest.aa61979ecc7d0b43daf2481e73f754ac.js": "/SR2Planner/precache-manifest.aa61979ecc7d0b43daf2481e73f754ac.js",
     "service-worker.js": "/SR2Planner/service-worker.js",
     "static/css/main.d498bfb3.chunk.css.map": "/SR2Planner/static/css/main.d498bfb3.chunk.css.map",
-    "static/js/2.ee034519.chunk.js.LICENSE.txt": "/SR2Planner/static/js/2.ee034519.chunk.js.LICENSE.txt",
+    "static/js/2.6db63fd0.chunk.js.LICENSE.txt": "/SR2Planner/static/js/2.6db63fd0.chunk.js.LICENSE.txt",
     "static/media/angler.png": "/SR2Planner/static/media/angler.6f0cfe58.png",
+    "static/media/archway.png": "/SR2Planner/static/media/archway.6447b3e8.png",
     "static/media/batty.png": "/SR2Planner/static/media/batty.4e9628cf.png",
     "static/media/boom.png": "/SR2Planner/static/media/boom.e9c80f83.png",
     "static/media/briarHen.png": "/SR2Planner/static/media/briarHen.b7bea1e7.png",
@@ -20,9 +21,12 @@
     "static/media/cotton.png": "/SR2Planner/static/media/cotton.dad67469.png",
     "static/media/crystal.png": "/SR2Planner/static/media/crystal.9faf58d1.png",
     "static/media/cuberry.png": "/SR2Planner/static/media/cuberry.e7205c61.png",
+    "static/media/den.png": "/SR2Planner/static/media/den.a01e02b7.png",
     "static/media/dervish.png": "/SR2Planner/static/media/dervish.7dbe54b3.png",
+    "static/media/digsite.png": "/SR2Planner/static/media/digsite.e39a0645.png",
     "static/media/fire.png": "/SR2Planner/static/media/fire.cd9d22bc.png",
     "static/media/flutter.png": "/SR2Planner/static/media/flutter.a604538b.png",
+    "static/media/gully.png": "/SR2Planner/static/media/gully.bfc0cc0e.png",
     "static/media/heartBeat.png": "/SR2Planner/static/media/heartBeat.0bca6e19.png",
     "static/media/henHen.png": "/SR2Planner/static/media/henHen.46a69def.png",
     "static/media/honey.png": "/SR2Planner/static/media/honey.1dff5499.png",
@@ -52,13 +56,14 @@
     "static/media/tabby.png": "/SR2Planner/static/media/tabby.a4348c47.png",
     "static/media/tangle.png": "/SR2Planner/static/media/tangle.e4671a13.png",
     "static/media/thundercluck.png": "/SR2Planner/static/media/thundercluck.0e43afb2.png",
+    "static/media/tidepools.png": "/SR2Planner/static/media/tidepools.d1d4c2d4.png",
     "static/media/waterLettuce.png": "/SR2Planner/static/media/waterLettuce.5618063c.png",
     "static/media/yolky.png": "/SR2Planner/static/media/yolky.8b8c7b11.png"
   },
   "entrypoints": [
     "static/js/runtime-main.447e9164.js",
-    "static/js/2.ee034519.chunk.js",
+    "static/js/2.6db63fd0.chunk.js",
     "static/css/main.d498bfb3.chunk.css",
-    "static/js/main.6069d7f9.chunk.js"
+    "static/js/main.f8cc0dc1.chunk.js"
   ]
 }
