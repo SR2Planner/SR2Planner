@@ -65,25 +65,25 @@ export default function Planner() {
     <div>
       <img src={require(`./map.png`)} alt="Slime Rancher 2 Conservatory map" height="790px"></img>
       {plotsGully.map((plot) => (
-        <Plot plot={plot}></Plot>
+        <Plot key={plot.id} plot={plot}></Plot>
       ))}
       {plotsTidepools.map((plot) => (
-        <Plot plot={plot}></Plot>
+        <Plot key={plot.id} plot={plot}></Plot>
       ))}
       {plotsConservatory.map((plot) => (
-        <Plot plot={plot}></Plot>
+        <Plot key={plot.id} plot={plot}></Plot>
       ))}
       {plotsArchway.map((plot) => (
-        <Plot plot={plot}></Plot>
+        <Plot key={plot.id} plot={plot}></Plot>
       ))}
       {plotsDen.map((plot) => (
-        <Plot plot={plot}></Plot>
+        <Plot key={plot.id} plot={plot}></Plot>
       ))}
       {plotsDigsite.map((plot) => (
-        <Plot plot={plot}></Plot>
+        <Plot key={plot.id} plot={plot}></Plot>
       ))}
       {freeRange.map((plot) => (
-        <FreeRange plot={plot}></FreeRange>
+        <FreeRange key={plot.id} plot={plot}></FreeRange>
       ))}
     </div>
   );

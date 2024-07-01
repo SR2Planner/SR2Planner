@@ -31,7 +31,7 @@ export default function Help() {
 
   return (
     <div>
-      <Button color="text.secondary" variant="body2" gutterBottom onClick={handleOpen}>
+      <Button color="text.secondary" variant="body2" onClick={handleOpen}>
         Need Help?
       </Button>
       <Modal
@@ -41,7 +41,7 @@ export default function Help() {
         aria-describedby="simple-modal-description"
       >
         <Box sx={style}>
-          <Typography variant="body2" fontWeight={600} gutterBottom paddingLeft={1}>
+          <Typography variant="body2" fontWeight={600}  paddingLeft={1}>
             PLEASE BE AWARE THAT THIS PROJECT IS A WORK IN PROGRESS IN ITS VERY EARLY STAGES!
           </Typography>
           <Divider />

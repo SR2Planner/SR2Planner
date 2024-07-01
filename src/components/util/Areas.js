@@ -8,12 +8,12 @@ import CardMedia from "@mui/material/CardMedia";
 const areas = [
   {
     name: "The Gully",
-    image: "placeholder.png",
+    image: "areas/gully.png",
     color: "rgba(192, 127, 48, 1)",
   },
   {
     name: "The Tidepools",
-    image: "placeholder.png",
+    image: "areas/tidepools.png",
     color: "rgba(211, 93, 152, 1)",
   },
   {
@@ -23,17 +23,17 @@ const areas = [
   },
   {
     name: "The Archway",
-    image: "placeholder.png",
+    image: "areas/archway.png",
     color: "rgba(205, 210, 249, 1)",
   },
   {
     name: "The Den",
-    image: "placeholder.png",
+    image: "areas/den.png",
     color: "rgba(116, 103, 248, 1)",
   },
   {
     name: "The Digsite",
-    image: "placeholder.png",
+    image: "areas/digsite.png",
     color: "rgba(120, 108, 144, 1)",
   },
 ];

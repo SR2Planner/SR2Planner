@@ -17,7 +17,7 @@ export default function Footer() {
       >
         <AnnouncementIcon />
         <br />
-        <Typography variant="body2" fontWeight={600} gutterBottom paddingLeft={1}>
+        <Typography variant="body2" fontWeight={600} paddingLeft={1}>
           PLEASE BE AWARE THAT THIS PROJECT IS A WORK IN PROGRESS IN ITS VERY EARLY STAGES!
         </Typography>
       </Box>
