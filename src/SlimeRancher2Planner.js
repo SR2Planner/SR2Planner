@@ -8,6 +8,8 @@ import Footer from "./components/layout/Footer";
 import Container from "@mui/material/Container";
 import Planner from "./components/layout/Planner";
 import FavFoods from "./components/util/FavFoods";
+import Areas from "./components/util/Areas";
+
 import MapOverview from "./components/util/MapOverview";
 
 import Divider from "@mui/material/Divider";
@@ -65,23 +67,20 @@ export default function SlimeRancher2Planner() {
               pl: "10px",
               pr: "10px",
               margin: 0,
-              maxWidth: "100%",
+              maxWidth: "100%", maxHeight: "100%",
               alignItems: "center",
             }}
           >
             <Planner />
+
           </Container>
-          <Container                        sx={{
-              pt: "60px",
-              pb: "85px",
-              pl: "10px",
-              pr: "10px",
-              margin: 0,
-              maxWidth: "100%",
-              alignItems: "center",
-            }}>
-          <MapOverview/>
-          </Container>
+                    <Divider orientation="vertical" flexItem />
+
+                    <Container
+                      sx={{ pt: "60px", pb: "85px", pl: "10px", pr: "10px", margin: 0, minWidth:"350px"}}
+                    >
+                      <Areas />
+                    </Container>
         </Box>
 
         <Box

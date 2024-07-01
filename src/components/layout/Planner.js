@@ -1,60 +1,70 @@
 import * as React from "react";
 import Plot from "../planning/Plot";
+import FreeRange from "../planning/FreeRange";
 
 const plotsGully = [
-  { id: "plot1", top: 67, left: 375 },
-  { id: "plot2", top: 130, left: 305 },
-  { id: "plot2", top: 130, left: 360 },
-  { id: "plot2", top: 130, left: 425 },
-  { id: "plot2", top: 200, left: 375 },
+  { id: "gu1", top: 70, left: 290 },
+  { id: "gu2", top: 130, left: 190 },
+  { id: "gu3", top: 130, left: 260 },
+  { id: "gu4", top: 145, left: 350 },
+  { id: "gu5", top: 240, left: 290 },
 ];
 
 const plotsTidepools = [
-  { id: "plot1", top: 67, left: 580 },
-  { id: "plot2", top: 67, left: 655 },
-  { id: "plot2", top: 125, left: 620 },
-  { id: "plot2", top: 125, left: 675 },
-  { id: "plot2", top: 183, left: 655 },
+  { id: "tp1", top: 70, left: 485 },
+  { id: "tp2", top: 80, left: 580 },
+  { id: "tp3", top: 175, left: 540 },
+  { id: "tp4", top: 175, left: 605 },
+  { id: "tp5", top: 240, left: 580 },
 ];
 
 const plotsConservatory = [
-  { id: "plot1", top: 385, left: 222 },
-  { id: "plot2", top: 385, left: 275 },
-  { id: "plot2", top: 460, left: 365 },
-  { id: "plot2", top: 513, left: 365 },
-  { id: "plot2", top: 488, left: 250 },
-  { id: "plot2", top: 541, left: 197 },
-  { id: "plot2", top: 541, left: 250 },
-  { id: "plot2", top: 541, left: 303 },
+  { id: "cv1", top: 340, left: 185 },
+  { id: "cv2", top: 340, left: 240 },
+  { id: "cv3", top: 468, left: 360 },
+  { id: "cv4", top: 520, left: 360 },
+  { id: "cv5", top: 468, left: 233 },
+  { id: "cv6", top: 520, left: 181 },
+  { id: "cv7", top: 520, left: 233 },
+  { id: "cv8", top: 520, left: 285 },
 ];
 
 const plotsArchway = [
-  { id: "plot1", top: 409, left: 647 },
-  { id: "plot2", top: 480, left: 625 },
-  { id: "plot2", top: 426, left: 708 },
-  { id: "plot2", top: 480, left: 745 },
-  { id: "plot2", top: 510, left: 690 },
+  { id: "aw1", top: 365, left: 500 },
+  { id: "aw2", top: 390, left: 565 },
+  { id: "aw3", top: 440, left: 630 },
+  { id: "aw4", top: 500, left: 610 },
+  { id: "aw5", top: 468, left: 460 },
 ];
 
 const plotsDen = [
-  { id: "plot1", top: 733, left: 400 },
-  { id: "plot2", top: 733, left: 453 },
-  { id: "plot2", top: 785, left: 400 },
-  { id: "plot2", top: 785, left: 453 },
-  { id: "plot2", top: 785, left: 518 },
+  { id: "dn1", top: 678, left: 193 },
+  { id: "dn2", top: 655, left: 247 },
+  { id: "dn3", top: 745, left: 228 },
+  { id: "dn4", top: 745, left: 283 },
+  { id: "dn5", top: 725, left: 350 },
 ];
 
 const plotsDigsite = [
-  { id: "plot1", top: 650, left: 693 },
-  { id: "plot2", top: 730, left: 681 },
-  { id: "plot2", top: 785, left: 681 },
-  { id: "plot2", top: 785, left: 734 },
+  { id: "ds1", top: 610, left: 530 },
+  { id: "ds2", top: 712, left: 522 },
+  { id: "ds3", top: 767, left: 522 },
+  { id: "ds4", top: 790, left: 575 },
+];
+
+const freeRange = [
+  { id: "frGu", top: 240, left: 190 },
+  { id: "frTp", top: 240, left: 460 },
+  { id: "frCv", top: 340, left: 360 },
+  { id: "frAw", top: 340, left: 630 },
+   { id: "frDn", top: 615, left: 360 },
+    { id: "frDs", top: 615, left: 630 },
 ];
 export default function Planner() {
   return (
     <div >
 
-      <img src={require(`./mapDetail.png`)} width="780px"></img>
+      <img src={require(`./map.png`)} height="790px"></img>
       {plotsGully.map((plot) => (
         <Plot plot={plot}></Plot>
       ))}
@@ -73,6 +83,10 @@ export default function Planner() {
       {plotsDigsite.map((plot) => (
         <Plot plot={plot}></Plot>
       ))}
+            {freeRange.map((plot) => (
+              <FreeRange plot={plot}></FreeRange>
+            ))}
+
     </div>
   );
 }

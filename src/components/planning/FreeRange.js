@@ -53,9 +53,9 @@ const freeRangeeTypes = [
   { name: "Tabby Slime", image: "slimes/tabby.png" },
   { name: "Yolky Slime", image: "slimes/yolky.png" },
   { name: "Briar Hen", image: "meats/briarHen.png" },
-  { name: "Hen Hen", image: "meast/henHen.png" },
+  { name: "Hen Hen", image: "meats/henHen.png" },
   { name: "Painted Hen", image: "meats/paintedHen.png" },
-  { name: "Sea Hen", image: "meast/seaHen.png" },
+  { name: "Sea Hen", image: "meats/seaHen.png" },
   { name: "Stony Hen", image: "meats/stonyHen.png" },
   { name: "Thundercluck", image: "meats/Thundercluck.png" },
   { name: "Mixed Meats", image: "meats/mixedMeats.png" },
@@ -73,7 +73,7 @@ const freeRangeeTypes = [
   { name: "None", image: "placeholder.png" },
 ];
 
-export default function FreeRangePlanner({ plotName }) {
+export default function FreeRangePlanner({ plot }) {
   const [open, setOpen] = React.useState(false);
   const [chosenContent1, setChosenContent1] = React.useState([]);
   const [chosenContent2, setChosenContent2] = React.useState([]);
@@ -93,6 +93,7 @@ export default function FreeRangePlanner({ plotName }) {
   const handleChangeContent2 = (event) => {
     setChosenContent2(event.target.value);
   };
+  let plotText = "Free Range";
 
   let plotContentImages = <div />;
 
@@ -114,17 +115,13 @@ export default function FreeRangePlanner({ plotName }) {
         <CardMedia
           component="img"
           alt={chosenContent1.name}
-          height="40"
-          width="40"
-          sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+            sx={{ padding: "0", width: "25px", objectFit: "contain" }}
           image={require(`../../../public/images/${chosenContent1.image}`)}
         />
         <CardMedia
           component="img"
           alt={chosenContent2.name}
-          height="40"
-          width="40"
-          sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+            sx={{ padding: "0", width: "25px", objectFit: "contain" }}
           image={require(`../../../public/images/${chosenContent2.image}`)}
         />
       </Box>
@@ -138,9 +135,7 @@ export default function FreeRangePlanner({ plotName }) {
       <CardMedia
         component="img"
         alt={chosenContent1.name}
-        height="40"
-        width="40"
-        sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+            sx={{ padding: "0", width: "25px", objectFit: "contain" }}
         image={require(`../../../public/images/${chosenContent1.image}`)}
       />
     );
@@ -153,9 +148,7 @@ export default function FreeRangePlanner({ plotName }) {
       <CardMedia
         component="img"
         alt={chosenContent2.name}
-        height="40"
-        width="40"
-        sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+            sx={{ padding: "0", width: "25px", objectFit: "contain" }}
         image={require(`../../../public/images/${chosenContent2.image}`)}
       />
     );
@@ -165,11 +158,31 @@ export default function FreeRangePlanner({ plotName }) {
 
   return (
     <div>
-      <Card>
-        <CardActionArea onClick={handleOpen}>
-          <CardContent>
-            <Typography variant="body2" fontWeight={600}>
-              {plotName}
+      <Card        sx={{
+                     height: "50px",
+                     width: "50px",
+                     position: "absolute",
+                     left: plot.left,
+                     top: plot.top,
+                     background: "rgba(128, 220, 220, 1)"
+                   }}>
+        <CardActionArea onClick={handleOpen}          sx={{
+                                                        height: "50px",
+                                                        width: "50px",
+                                                      }}>
+          <CardContent             sx={{
+                                     height: "50px",
+                                     width: "50px",
+                                     display: "flex",
+                                     flexDirection: "column",
+                                     padding: "0px",
+                                     alignItems: "center",
+                                     justifyContent: "center",
+                                   }}>
+            <Typography variant="caption"           sx={{
+                                                          paddingBottom: "3px", fontSize:"0.48rem"
+                                                        }}>
+              {plotText}
             </Typography>
             {plotContentImages}
           </CardContent>
@@ -182,7 +195,7 @@ export default function FreeRangePlanner({ plotName }) {
         aria-describedby="simple-modal-description"
       >
         <Stack spacing={2} sx={style}>
-          <Typography>Plan {plotName}</Typography>
+          <Typography>Plan {plot.plotName}</Typography>
           <FormControl fullWidth>
             <Select
               displayEmpty

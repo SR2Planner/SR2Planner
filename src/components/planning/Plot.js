@@ -38,8 +38,8 @@ const MenuProps = {
 const plotTypes = [
   "Corral",
   "Coop",
-  "Fruit Garden",
-  "Veggie Garden",
+  "Fruit Tree",
+  "Veggie Patch",
   "Incinerator",
   "Pond",
   "Silo",
@@ -66,11 +66,11 @@ const corralSlimeTypes = [
 ];
 const coopTypes = [
   { name: "Briar Hen", image: "meats/briarHen.png" },
-  { name: "Hen Hen", image: "meast/henHen.png" },
+  { name: "Hen Hen", image: "meats/henHen.png" },
   { name: "Painted Hen", image: "meats/paintedHen.png" },
   { name: "Sea Hen", image: "meats/seaHen.png" },
   { name: "Stony Hen", image: "meats/stonyHen.png" },
-  { name: "Thundercluck", image: "meats/Thundercluck.png" },
+  { name: "Thundercluck", image: "meats/thundercluck.png" },
   { name: "Mixed Meats", image: "meats/mixedMeats.png" },
   { name: "Yolky Slime", image: "slimes/yolky.png" },
   { name: "None", image: "placeholder.png" },
@@ -123,10 +123,10 @@ export default function Plot({ plot }) {
       case "Coop":
         setContentOptions(coopTypes);
         break;
-      case "Fruit Garden":
+      case "Fruit Tree":
         setContentOptions(fruitTypes);
         break;
-      case "Veggie Garden":
+      case "Veggie Patch":
         setContentOptions(veggieTypes);
         break;
       case "Pond":
@@ -152,7 +152,7 @@ export default function Plot({ plot }) {
     setChosenContent2(event.target.value);
   };
 
-  let plotText = "";
+  let plotText = "Plot";
   let plotContentImages = <div />;
   if (chosenPlotType !== undefined && chosenPlotType !== "" && chosenPlotType !== "Empty") {
     plotText = `${chosenPlotType}`;
@@ -255,7 +255,7 @@ export default function Plot({ plot }) {
             <Typography
               variant="caption"
               sx={{
-                paddingBottom: "3px",
+                paddingBottom: "3px", fontSize:"0.48rem"
               }}
             >
               {plotText}

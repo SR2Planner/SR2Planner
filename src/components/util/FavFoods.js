@@ -106,7 +106,7 @@ const rowsNoFav = [
 export default function FavFoods() {
   return (
     <div>
-      <Typography variant="h6" align="center">
+      <Typography variant="body1" align="center">
         Favorite Foods
       </Typography>
       <br />
