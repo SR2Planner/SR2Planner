@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "481be2b8bea877b4587044e271dee770",
+    "revision": "2646734a19ea5a2492142cc263332ba1",
     "url": "/SR2Planner/index.html"
   },
   {
-    "revision": "31c3101d10d28114d312",
+    "revision": "86f5c4704702849b36ed",
     "url": "/SR2Planner/static/css/main.d498bfb3.chunk.css"
   },
   {
-    "revision": "17432a21d92c221bb524",
-    "url": "/SR2Planner/static/js/2.6db63fd0.chunk.js"
+    "revision": "8368eae3fc335353bef4",
+    "url": "/SR2Planner/static/js/2.0cc0d0ad.chunk.js"
   },
   {
     "revision": "e65922e1a95aafdda6f547e02a94b171",
-    "url": "/SR2Planner/static/js/2.6db63fd0.chunk.js.LICENSE.txt"
+    "url": "/SR2Planner/static/js/2.0cc0d0ad.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "31c3101d10d28114d312",
-    "url": "/SR2Planner/static/js/main.f8cc0dc1.chunk.js"
+    "revision": "86f5c4704702849b36ed",
+    "url": "/SR2Planner/static/js/main.f768371b.chunk.js"
   },
   {
     "revision": "4d04d07f31b723a3721d",
@@ -46,6 +46,18 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "06c817d25e3d74d1b55a1055bffc6688",
     "url": "/SR2Planner/static/media/carrot.06c817d2.png"
+  },
+  {
+    "revision": "630e4a62a0cd6d957ab0e5f0dac11cee",
+    "url": "/SR2Planner/static/media/conservatory.630e4a62.png"
+  },
+  {
+    "revision": "1e859ff9eaac46d91a9fb5a629cc24fe",
+    "url": "/SR2Planner/static/media/coop.1e859ff9.png"
+  },
+  {
+    "revision": "e431488ece47e81226d0f49e2ae48625",
+    "url": "/SR2Planner/static/media/corral.e431488e.png"
   },
   {
     "revision": "dad67469335f732204934420dc64eb71",
@@ -80,6 +92,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SR2Planner/static/media/flutter.a604538b.png"
   },
   {
+    "revision": "8ac798164121550f219cac6b6062758b",
+    "url": "/SR2Planner/static/media/garden.8ac79816.png"
+  },
+  {
     "revision": "bfc0cc0eb6ce5e92a2b0157383b1cf0c",
     "url": "/SR2Planner/static/media/gully.bfc0cc0e.png"
   },
@@ -98,6 +114,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "06bea2729fc078faaf7562e7b2f06ee2",
     "url": "/SR2Planner/static/media/hunter.06bea272.png"
+  },
+  {
+    "revision": "1b476b746ad37fe9d19f2d2cf83a9ecd",
+    "url": "/SR2Planner/static/media/incinerator.1b476b74.png"
   },
   {
     "revision": "83a284d744d536699de52f7d48e6f76b",
@@ -156,6 +176,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/SR2Planner/static/media/pomegranite.f933987c.png"
   },
   {
+    "revision": "ce3e1a0596b49e11019aabf8f272f9f8",
+    "url": "/SR2Planner/static/media/pond.ce3e1a05.png"
+  },
+  {
     "revision": "66890f184a40a6de03982e6fe9b27dda",
     "url": "/SR2Planner/static/media/pricklePear.66890f18.png"
   },
@@ -182,6 +206,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "b09eff56f350f472c75eb0ac063ee45b",
     "url": "/SR2Planner/static/media/seaHen.b09eff56.png"
+  },
+  {
+    "revision": "12a439a73e953cc6d10101ab90efbb53",
+    "url": "/SR2Planner/static/media/silo.12a439a7.png"
   },
   {
     "revision": "f1894d71c569b9062c298ce30a24cca4",
