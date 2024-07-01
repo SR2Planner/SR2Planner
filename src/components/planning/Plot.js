@@ -10,8 +10,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardMedia from "@mui/material/CardMedia";
-import Stack from '@mui/material/Stack';
-
+import Stack from "@mui/material/Stack";
 
 const style = {
   position: "absolute",
@@ -39,8 +38,8 @@ const MenuProps = {
 const plotTypes = [
   "Corral",
   "Coop",
-  "Fruit Garden",
-  "Veggie Garden",
+  "Fruit Tree",
+  "Veggie Patch",
   "Incinerator",
   "Pond",
   "Silo",
@@ -67,11 +66,11 @@ const corralSlimeTypes = [
 ];
 const coopTypes = [
   { name: "Briar Hen", image: "meats/briarHen.png" },
-  { name: "Hen Hen", image: "meast/henHen.png" },
+  { name: "Hen Hen", image: "meats/henHen.png" },
   { name: "Painted Hen", image: "meats/paintedHen.png" },
   { name: "Sea Hen", image: "meats/seaHen.png" },
   { name: "Stony Hen", image: "meats/stonyHen.png" },
-  { name: "Thundercluck", image: "meats/Thundercluck.png" },
+  { name: "Thundercluck", image: "meats/thundercluck.png" },
   { name: "Mixed Meats", image: "meats/mixedMeats.png" },
   { name: "Yolky Slime", image: "slimes/yolky.png" },
   { name: "None", image: "placeholder.png" },
@@ -100,7 +99,7 @@ const pondSlimeTypes = [
   { name: "None", image: "placeholder.png" },
 ];
 
-export default function Plot({ plotName }) {
+export default function Plot({ plot }) {
   const [open, setOpen] = React.useState(false);
   const [chosenPlotType, setChosenPlotType] = React.useState("");
   const [chosenContent1, setChosenContent1] = React.useState("");
@@ -124,10 +123,10 @@ export default function Plot({ plotName }) {
       case "Coop":
         setContentOptions(coopTypes);
         break;
-      case "Fruit Garden":
+      case "Fruit Tree":
         setContentOptions(fruitTypes);
         break;
-      case "Veggie Garden":
+      case "Veggie Patch":
         setContentOptions(veggieTypes);
         break;
       case "Pond":
@@ -153,10 +152,10 @@ export default function Plot({ plotName }) {
     setChosenContent2(event.target.value);
   };
 
-  let plotText = "";
+  let plotText = "Plot";
   let plotContentImages = <div />;
   if (chosenPlotType !== undefined && chosenPlotType !== "" && chosenPlotType !== "Empty") {
-    plotText = ` - ${chosenPlotType}`;
+    plotText = `${chosenPlotType}`;
   } else {
     plotText = "";
   }
@@ -180,17 +179,13 @@ export default function Plot({ plotName }) {
           <CardMedia
             component="img"
             alt={chosenContent1.name}
-            height="40"
-            width="40"
-            sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+            sx={{ padding: "0", width: "25px", objectFit: "contain" }}
             image={require(`../../../public/images/${chosenContent1.image}`)}
           />
           <CardMedia
             component="img"
             alt={chosenContent2.name}
-            height="40"
-            width="40"
-            sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+            sx={{ padding: "0", width: "25px", objectFit: "contain" }}
             image={require(`../../../public/images/${chosenContent2.image}`)}
           />
         </Box>
@@ -204,9 +199,7 @@ export default function Plot({ plotName }) {
         <CardMedia
           component="img"
           alt={chosenContent1.name}
-          height="40"
-          width="40"
-          sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+          sx={{ padding: "0", width: "25px", objectFit: "contain" }}
           image={require(`../../../public/images/${chosenContent1.image}`)}
         />
       );
@@ -219,9 +212,7 @@ export default function Plot({ plotName }) {
         <CardMedia
           component="img"
           alt={chosenContent2.name}
-          height="40"
-          width="40"
-          sx={{ padding: "1em 1em 0 1em", objectFit: "contain" }}
+          sx={{ padding: "0", width: "25px", objectFit: "contain" }}
           image={require(`../../../public/images/${chosenContent2.image}`)}
         />
       );
@@ -234,11 +225,40 @@ export default function Plot({ plotName }) {
 
   return (
     <div>
-      <Card>
-        <CardActionArea onClick={handleOpen}>
-          <CardContent>
-            <Typography variant="body2" fontWeight={600}>
-              {plotName}
+      <Card
+        sx={{
+          height: "50px",
+          width: "50px",
+          position: "absolute",
+          left: plot.left,
+          top: plot.top,
+        }}
+      >
+        <CardActionArea
+          onClick={handleOpen}
+          sx={{
+            height: "50px",
+            width: "50px",
+          }}
+        >
+          <CardContent
+            sx={{
+              height: "50px",
+              width: "50px",
+              display: "flex",
+              flexDirection: "column",
+              padding: "0px",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <Typography
+              variant="caption"
+              sx={{
+                paddingBottom: "3px",
+                fontSize: "0.48rem",
+              }}
+            >
               {plotText}
             </Typography>
             {plotContentImages}
@@ -252,7 +272,6 @@ export default function Plot({ plotName }) {
         aria-describedby="simple-modal-description"
       >
         <Stack spacing={2} sx={style}>
-        <Typography>Plan {plotName}</Typography>
           <FormControl fullWidth>
             <Select
               displayEmpty
@@ -272,7 +291,8 @@ export default function Plot({ plotName }) {
               ))}
             </Select>
           </FormControl>
-          {chosenPlotType !== undefined && chosenPlotType !== '' &&
+          {chosenPlotType !== undefined &&
+            chosenPlotType !== "" &&
             chosenPlotType !== "Empty" &&
             chosenPlotType !== "Silo" && (
               <>

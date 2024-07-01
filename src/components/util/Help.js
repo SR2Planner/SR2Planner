@@ -2,8 +2,8 @@ import React from "react";
 import Modal from "@mui/material/Modal";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import Button from '@mui/material/Button'
-import Divider from '@mui/material/Divider'
+import Button from "@mui/material/Button";
+import Divider from "@mui/material/Divider";
 import Link from "@mui/material/Link";
 
 const style = {
@@ -17,7 +17,6 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
-
 
 export default function Help() {
   const [open, setOpen] = React.useState(false);
@@ -45,13 +44,13 @@ export default function Help() {
           <Typography variant="body2" fontWeight={600} gutterBottom paddingLeft={1}>
             PLEASE BE AWARE THAT THIS PROJECT IS A WORK IN PROGRESS IN ITS VERY EARLY STAGES!
           </Typography>
-          <Divider/>
-          <br/>
+          <Divider />
+          <br />
           <Typography>
             There are a lot of features still missing, that I am planning to add whenever I find the
             time to do so, like e.g. better visuals, being able to export and import your plan, ...
           </Typography>
-          <br/>
+          <br />
           <Typography>
             If you noticed a bug, have a feature request, or have just a general question, please{" "}
             <Link href="https://github.com/SR2Planner/SR2Planner/issues/new?assignees=SR2Planner&labels=new&projects=SR2Planner%2F1&template=HELP_REQUEST.yml&title=Help+Request%3A+">
