@@ -136,7 +136,7 @@ export default function FreeRangePlanner({ plot }) {
       <CardMedia
         component="img"
         alt={chosenContent1.name}
-        sx={{ padding: "0", width: "25px", objectFit: "contain" }}
+        sx={{ padding: "0", width: "35px", objectFit: "contain" }}
         image={require(`../../../public/images/${chosenContent1.image}`)}
       />
     );
@@ -149,12 +149,21 @@ export default function FreeRangePlanner({ plot }) {
       <CardMedia
         component="img"
         alt={chosenContent2.name}
-        sx={{ padding: "0", width: "25px", objectFit: "contain" }}
+        sx={{ padding: "0", width: "35px", objectFit: "contain" }}
         image={require(`../../../public/images/${chosenContent2.image}`)}
       />
     );
   } else {
-    plotContentImages = <div />;
+    plotContentImages = <div>
+      <Typography
+        variant="body1"
+        align="center"
+        sx={{
+          paddingBottom: "3px",
+          fontSize: "0.75rem"
+        }}>
+          {plotText}
+      </Typography></div>;
   }
 
   return (
@@ -187,15 +196,6 @@ export default function FreeRangePlanner({ plot }) {
               justifyContent: "center",
             }}
           >
-            <Typography
-              variant="caption"
-              sx={{
-                paddingBottom: "3px",
-                fontSize: "0.48rem",
-              }}
-            >
-              {plotText}
-            </Typography>
             {plotContentImages}
           </CardContent>
         </CardActionArea>

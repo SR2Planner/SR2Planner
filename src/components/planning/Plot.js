@@ -5,7 +5,6 @@ import MenuItem from "@mui/material/MenuItem";
 import Select from "@mui/material/Select";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
-import Typography from "@mui/material/Typography";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardActionArea from "@mui/material/CardActionArea";
@@ -153,17 +152,7 @@ export default function Plot({ plot }) {
     setChosenContent2(event.target.value);
   };
 
-  let plotText = "Plot";
   let plotContentImages = <div />;
-  if (
-    chosenPlotType.name !== undefined &&
-    chosenPlotType.name !== "" &&
-    chosenPlotType.name !== "Empty"
-  ) {
-    plotText = `${chosenPlotType.name}`;
-  } else {
-    plotText = "";
-  }
 
   if (
     chosenPlotType.name !== undefined &&
@@ -208,7 +197,7 @@ export default function Plot({ plot }) {
         <CardMedia
           component="img"
           alt={chosenContent1.name}
-          sx={{ padding: "0", width: "25px", objectFit: "contain" }}
+          sx={{ padding: "0", width: "35px", objectFit: "contain" }}
           image={require(`../../../public/images/${chosenContent1.image}`)}
         />
       );
@@ -221,7 +210,7 @@ export default function Plot({ plot }) {
         <CardMedia
           component="img"
           alt={chosenContent2.name}
-          sx={{ padding: "0", width: "25px", objectFit: "contain" }}
+          sx={{ padding: "0", width: "35px", objectFit: "contain" }}
           image={require(`../../../public/images/${chosenContent2.image}`)}
         />
       );
@@ -238,7 +227,7 @@ export default function Plot({ plot }) {
         <CardMedia
           component="img"
           alt={chosenPlotType.name}
-          sx={{ padding: "0", width: "25px", objectFit: "contain" }}
+          sx={{ padding: "0", width: "35px", objectFit: "contain" }}
           image={require(`../../../public/images/${chosenPlotType.image}`)}
         />
       );
@@ -278,15 +267,6 @@ export default function Plot({ plot }) {
               justifyContent: "center",
             }}
           >
-            <Typography
-              variant="caption"
-              sx={{
-                paddingBottom: "3px",
-                fontSize: "0.48rem",
-              }}
-            >
-              {plotText}
-            </Typography>
             {plotContentImages}
           </CardContent>
         </CardActionArea>
