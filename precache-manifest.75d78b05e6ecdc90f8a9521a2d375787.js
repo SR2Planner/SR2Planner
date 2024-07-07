@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "85f9520ec07deeed8a024ec750ade7aa",
+    "revision": "73783aaf9e5d9b2d172ab6e2ab2d8ab7",
     "url": "/SR2Planner/index.html"
   },
   {
-    "revision": "df9da329ee78678d4c67",
+    "revision": "9e9f93ceb102ca4cf2bd",
     "url": "/SR2Planner/static/css/main.d498bfb3.chunk.css"
   },
   {
-    "revision": "8368eae3fc335353bef4",
-    "url": "/SR2Planner/static/js/2.0cc0d0ad.chunk.js"
+    "revision": "fbca1d62621c4b1a211b",
+    "url": "/SR2Planner/static/js/2.313488e0.chunk.js"
   },
   {
     "revision": "e65922e1a95aafdda6f547e02a94b171",
-    "url": "/SR2Planner/static/js/2.0cc0d0ad.chunk.js.LICENSE.txt"
+    "url": "/SR2Planner/static/js/2.313488e0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "df9da329ee78678d4c67",
-    "url": "/SR2Planner/static/js/main.5415bc16.chunk.js"
+    "revision": "9e9f93ceb102ca4cf2bd",
+    "url": "/SR2Planner/static/js/main.91d0663a.chunk.js"
   },
   {
     "revision": "4d04d07f31b723a3721d",
