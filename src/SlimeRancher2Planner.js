@@ -8,9 +8,7 @@ import Footer from "./components/layout/Footer";
 import Container from "@mui/material/Container";
 import Planner from "./components/layout/Planner";
 import FavFoods from "./components/util/FavFoods";
-import Areas from "./components/util/Areas";
 import Divider from "@mui/material/Divider";
-import PlanningOverview from "./components/util/PlanningOverview";
 
 export default function SlimeRancher2Planner() {
   const [mode, setMode] = React.useState("light");
@@ -50,12 +48,20 @@ export default function SlimeRancher2Planner() {
             minHeight: "100vh",
           }}
         >
-          {" "}
           <Container
-            width="50px"
-            sx={{ pt: "60px", pb: "85px", pl: "10px", pr: "10px", margin: 0, width: "150px" }}
+            sx={{
+              pt: "60px",
+              pb: "85px",
+              pl: "0px",
+              pr:"0px",
+              margin: 0,
+              maxHeight: "100%",
+                flexGrow:0,
+              alignItems: "center",
+              width: "auto"
+            }}
           >
-            <FavFoods />
+      <img src={require(`./mapOverview.png`)} alt="Slime Rancher 2 Conservatory map" height="790px"></img>
           </Container>
           <Divider orientation="vertical" flexItem />
           <Container
@@ -65,6 +71,7 @@ export default function SlimeRancher2Planner() {
               pl: "10px",
               pr: "10px",
               margin: 0,
+              flexGrow: 1,
               maxWidth: "100%",
               maxHeight: "100%",
               alignItems: "center",
@@ -74,23 +81,12 @@ export default function SlimeRancher2Planner() {
           </Container>
           <Divider orientation="vertical" flexItem />
           <Container
-            width="500px"
-            sx={{
-              pt: "60px",
-              pb: "85px",
-              minWidth: "500px",
-              display: "flex",
-              flexDirection: "column",
-            }}
+width="50px"
+            sx={{ pt: "60px", pb: "85px", pl: "10px", pr: "10px", margin: 0, width: "150px" }}
           >
-            <Container>
-              <Areas />
-            </Container>
-            <Divider orientation="horizontal" flexItem sx={{pt:"24px", pb:"24px"}}/>
-            <Container>
-              <PlanningOverview />
-            </Container>
-          </Container>
+
+                        <FavFoods />
+                      </Container>
         </Box>
 
         <Box

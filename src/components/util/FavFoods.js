@@ -201,22 +201,21 @@ export default function FavFoods() {
         <Table size="small" aria-label="fav foods table">
           <TableBody>
             {rowsNoFav.map((row) => (
-              <TableRow key={row.slime} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
-                <TableCell>
+              <TableRow key={row.slime} sx={{display:"flex", "&:last-child td, &:last-child th": { border: 0 } }}>
+                <TableCell align="center">
+
                   <img
                     srcSet={require(`../../../public/images/${row.slimeImage}`)}
                     src={require(`../../../public/images/${row.slimeImage}`)}
                     alt={row.slime}
-                    witdh="20"
                     height="20"
-                  />{" "}
+                  />
                 </TableCell>
-                <TableCell>
+                <TableCell align="center" >
                   <img
                     srcSet={require(`../../../public/images/${row.foodImage}`)}
                     src={require(`../../../public/images/${row.foodImage}`)}
                     alt={row.slime}
-                    witdh="20"
                     height="20"
                   />{" "}
                 </TableCell>
