@@ -51,6 +51,7 @@ const freeRangeeTypes = [
   { name: "Rock Slime", image: "slimes/rock.png" },
   { name: "Saber Slime", image: "slimes/saber.png" },
   { name: "Tabby Slime", image: "slimes/tabby.png" },
+  { name: "Tangle Slime", image: "slimes/tangle.png" },
   { name: "Yolky Slime", image: "slimes/yolky.png" },
   { name: "Briar Hen", image: "meats/briarHen.png" },
   { name: "Hen Hen", image: "meats/henHen.png" },

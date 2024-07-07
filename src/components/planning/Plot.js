@@ -61,7 +61,7 @@ const corralSlimeTypes = [
   { name: "Rock Slime", image: "slimes/rock.png" },
   { name: "Saber Slime", image: "slimes/saber.png" },
   { name: "Tabby Slime", image: "slimes/tabby.png" },
-   { name: "Tangle Slime", image: "slimes/tangle.png" },
+  { name: "Tangle Slime", image: "slimes/tangle.png" },
   { name: "Yolky Slime", image: "slimes/yolky.png" },
   { name: "None", image: "placeholder.png" },
 ];
