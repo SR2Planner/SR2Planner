@@ -32,6 +32,12 @@ const rowsFruit = [
     food: "Pomegranite",
     foodImage: "fruits/pomegranite.png",
   },
+  {
+    slime: "Twin",
+    slimeImage: "slimes/twin.png",
+    food: "Polaricherry",
+    foodImage: "fruits/polaricherry.png",
+  },
 ];
 const rowsVeggie = [
   {
@@ -85,6 +91,12 @@ const rowsMeat = [
     foodImage: "meats/thundercluck.png",
   },
   {
+    slime: "Sloomber",
+    slimeImage: "slimes/sloomber.png",
+    food: "Candied Hen",
+    foodImage: "meats/candiedHen.png",
+  },
+  {
     slime: "Hunter",
     slimeImage: "slimes/hunter.png",
     food: "Roostro",
@@ -93,6 +105,7 @@ const rowsMeat = [
 ];
 const rowsNoFav = [
   { slime: "Pink", slimeImage: "slimes/pink.png", food: "None", foodImage: "other/mixed.png" },
+  { slime: "Ringtail", slimeImage: "slimes/ringtail.png", food: "None", foodImage: "other/mixed.png" },
   { slime: "Puddle", slimeImage: "slimes/puddle.png", food: "None", foodImage: "other/water.png" },
   { slime: "Fire", slimeImage: "slimes/fire.png", food: "None", foodImage: "other/ash.png" },
   {
@@ -103,15 +116,15 @@ const rowsNoFav = [
   },
 ];
 
+
 export default function FavFoods() {
   return (
     <div>
-      <Typography variant="body1" align="center">
+      <Typography variant="body2" align="center" sx={{"margin-bottom": "10px"}}>
         Favorite Foods
       </Typography>
-      <br />
-      <TableContainer component={Paper}>
-        <Table size="small" aria-label="fav foods table">
+      <TableContainer component={Paper} sx={{"margin-bottom": "5px"}}>
+        <Table size="small" aria-label="fav foods table" sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
           <TableBody>
             {rowsFruit.map((row) => (
               <TableRow key={row.slime} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
@@ -138,8 +151,7 @@ export default function FavFoods() {
           </TableBody>
         </Table>
       </TableContainer>
-      <br />
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} sx={{"margin-bottom": "5px"}}>
         <Table size="small" aria-label="fav foods table">
           <TableBody>
             {rowsVeggie.map((row) => (
@@ -167,8 +179,7 @@ export default function FavFoods() {
           </TableBody>
         </Table>
       </TableContainer>
-      <br />
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} sx={{"margin-bottom": "5px"}}>
         <Table size="small" aria-label="fav foods table">
           <TableBody>
             {rowsMeat.map((row) => (
@@ -196,8 +207,7 @@ export default function FavFoods() {
           </TableBody>
         </Table>
       </TableContainer>
-      <br />
-      <TableContainer component={Paper}>
+      <TableContainer component={Paper} sx={{"margin-bottom": "5px"}}>
         <Table size="small" aria-label="fav foods table">
           <TableBody>
             {rowsNoFav.map((row) => (

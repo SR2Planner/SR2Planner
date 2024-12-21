@@ -26,7 +26,7 @@ export default function Header({ mode, toggleColorMode }) {
 
         <Help/>
         <Typography color="text.secondary" variant="body1">
-          Version: 0.2
+          Version: 0.3
         </Typography>
         <IconButton
           color="inherit"
