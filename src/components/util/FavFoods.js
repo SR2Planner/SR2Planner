@@ -32,6 +32,12 @@ const rowsFruit = [
     food: "Pomegranite",
     foodImage: "fruits/pomegranite.png",
   },
+  {
+    slime: "Twin",
+    slimeImage: "slimes/twin.png",
+    food: "Polaricherry",
+    foodImage: "fruits/polaricherry.png",
+  },
 ];
 const rowsVeggie = [
   {
@@ -85,6 +91,12 @@ const rowsMeat = [
     foodImage: "meats/thundercluck.png",
   },
   {
+    slime: "Sloomber",
+    slimeImage: "slimes/sloomber.png",
+    food: "Candied Hen",
+    foodImage: "meats/candiedHen.png",
+  },
+  {
     slime: "Hunter",
     slimeImage: "slimes/hunter.png",
     food: "Roostro",
@@ -93,6 +105,7 @@ const rowsMeat = [
 ];
 const rowsNoFav = [
   { slime: "Pink", slimeImage: "slimes/pink.png", food: "None", foodImage: "other/mixed.png" },
+  { slime: "Ringtail", slimeImage: "slimes/ringtail.png", food: "None", foodImage: "other/mixed.png" },
   { slime: "Puddle", slimeImage: "slimes/puddle.png", food: "None", foodImage: "other/water.png" },
   { slime: "Fire", slimeImage: "slimes/fire.png", food: "None", foodImage: "other/ash.png" },
   {
