@@ -114,6 +114,8 @@ const rowsNoFav = [
     food: "Moondew Nectar",
     foodImage: "other/moondewNectar.png",
   },
+  { slime: "Yolky", slimeImage: "slimes/yolky.png", food: "None", foodImage: "other/none.png" },
+
 ];
 
 
