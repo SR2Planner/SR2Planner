@@ -20,12 +20,6 @@ export default function Header({ mode, toggleColorMode }) {
           gap: 2,
         }}
       >
-                <img
-                    src="/images/slimes/yolky.png"
-                    alt={"Yolky slime icon"}
-                    witdh="30"
-                    height="30"
-                  />
         <Typography flexGrow="1" variant="h6" fontWeight={600}>
     
             Slime Rancher 2 Planner
