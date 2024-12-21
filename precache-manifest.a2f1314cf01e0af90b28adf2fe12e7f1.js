@@ -1,27 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "5a6752272a0e910040a2bc479bd440ba",
+    "revision": "56dd50a1437b6c883cdc3c9981c4be9f",
     "url": "/SR2Planner/index.html"
   },
   {
-    "revision": "b7e87547936412ac063a",
+    "revision": "eac997989ee10d0926b3",
     "url": "/SR2Planner/static/css/main.d498bfb3.chunk.css"
   },
   {
-    "revision": "1fd26037cc810cec7946",
-    "url": "/SR2Planner/static/js/2.213b7291.chunk.js"
+    "revision": "aaa24403991ff22fdc28",
+    "url": "/SR2Planner/static/js/2.70c788f7.chunk.js"
   },
   {
-    "revision": "e65922e1a95aafdda6f547e02a94b171",
-    "url": "/SR2Planner/static/js/2.213b7291.chunk.js.LICENSE.txt"
+    "revision": "eac997989ee10d0926b3",
+    "url": "/SR2Planner/static/js/main.bc6f1980.chunk.js"
   },
   {
-    "revision": "b7e87547936412ac063a",
-    "url": "/SR2Planner/static/js/main.dbe5687f.chunk.js"
-  },
-  {
-    "revision": "4d04d07f31b723a3721d",
-    "url": "/SR2Planner/static/js/runtime-main.447e9164.js"
+    "revision": "ada0ee719e8a8e2427cd",
+    "url": "/SR2Planner/static/js/runtime~main.3058ef26.js"
   },
   {
     "revision": "e9745ffb14b94f895463e4dc3b20d516",

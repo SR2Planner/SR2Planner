@@ -1,17 +1,16 @@
 {
   "files": {
     "main.css": "/SR2Planner/static/css/main.d498bfb3.chunk.css",
-    "main.js": "/SR2Planner/static/js/main.dbe5687f.chunk.js",
-    "main.js.map": "/SR2Planner/static/js/main.dbe5687f.chunk.js.map",
-    "runtime-main.js": "/SR2Planner/static/js/runtime-main.447e9164.js",
-    "runtime-main.js.map": "/SR2Planner/static/js/runtime-main.447e9164.js.map",
-    "static/js/2.213b7291.chunk.js": "/SR2Planner/static/js/2.213b7291.chunk.js",
-    "static/js/2.213b7291.chunk.js.map": "/SR2Planner/static/js/2.213b7291.chunk.js.map",
+    "main.js": "/SR2Planner/static/js/main.bc6f1980.chunk.js",
+    "main.js.map": "/SR2Planner/static/js/main.bc6f1980.chunk.js.map",
+    "runtime~main.js": "/SR2Planner/static/js/runtime~main.3058ef26.js",
+    "runtime~main.js.map": "/SR2Planner/static/js/runtime~main.3058ef26.js.map",
+    "static/js/2.70c788f7.chunk.js": "/SR2Planner/static/js/2.70c788f7.chunk.js",
+    "static/js/2.70c788f7.chunk.js.map": "/SR2Planner/static/js/2.70c788f7.chunk.js.map",
     "index.html": "/SR2Planner/index.html",
-    "precache-manifest.935126eef08889db06f5d5c6c45a429f.js": "/SR2Planner/precache-manifest.935126eef08889db06f5d5c6c45a429f.js",
+    "precache-manifest.a2f1314cf01e0af90b28adf2fe12e7f1.js": "/SR2Planner/precache-manifest.a2f1314cf01e0af90b28adf2fe12e7f1.js",
     "service-worker.js": "/SR2Planner/service-worker.js",
     "static/css/main.d498bfb3.chunk.css.map": "/SR2Planner/static/css/main.d498bfb3.chunk.css.map",
-    "static/js/2.213b7291.chunk.js.LICENSE.txt": "/SR2Planner/static/js/2.213b7291.chunk.js.LICENSE.txt",
     "static/media/angler.png": "/SR2Planner/static/media/angler.e9745ffb.png",
     "static/media/archway.png": "/SR2Planner/static/media/archway.ec73d804.png",
     "static/media/ash.png": "/SR2Planner/static/media/ash.afa2f47f.png",
@@ -73,11 +72,5 @@
     "static/media/water.png": "/SR2Planner/static/media/water.50f45466.png",
     "static/media/waterLettuce.png": "/SR2Planner/static/media/waterLettuce.480ef292.png",
     "static/media/yolky.png": "/SR2Planner/static/media/yolky.cc8cd418.png"
-  },
-  "entrypoints": [
-    "static/js/runtime-main.447e9164.js",
-    "static/js/2.213b7291.chunk.js",
-    "static/css/main.d498bfb3.chunk.css",
-    "static/js/main.dbe5687f.chunk.js"
-  ]
+  }
 }
