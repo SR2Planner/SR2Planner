@@ -24,7 +24,7 @@ export default function Footer() {
 
       <Typography variant="body2" color="text.secondary" mb={1} paddingTop={1}>
         That means that a lot of features are still mising, like any sort of data saving
-        functionality. Make sure to take a screenshoot of your plan before you leave or reload this
+        functionality. Make sure to take a screenshot of your plan before you leave or reload this
         site!
       </Typography>
     </Container>
