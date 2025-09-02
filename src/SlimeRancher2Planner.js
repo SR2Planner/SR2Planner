@@ -4,7 +4,6 @@ import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import Header from "./components/layout/Header";
-import Footer from "./components/layout/Footer";
 import Container from "@mui/material/Container";
 import Planner from "./components/layout/Planner";
 import FavFoods from "./components/util/FavFoods";
@@ -51,7 +50,7 @@ export default function SlimeRancher2Planner() {
           <Container
             sx={{
               pt: "60px",
-              pb: "85px",
+              pb: "15px",
               pl: "0px",
               pr:"0px",
               margin: 0,
@@ -67,7 +66,7 @@ export default function SlimeRancher2Planner() {
           <Container
             sx={{
               pt: "60px",
-              pb: "85px",
+              pb: "15px",
               pl: "10px",
               pr: "10px",
               margin: 0,
@@ -82,27 +81,11 @@ export default function SlimeRancher2Planner() {
           <Divider orientation="vertical" flexItem />
           <Container
 width="50px"
-            sx={{ pt: "60px", pb: "85px", pl: "10px", pr: "10px", margin: 0, width: "150px" }}
+            sx={{ pt: "60px", pb: "15px", pl: "10px", pr: "10px", margin: 0, width: "150px" }}
           >
 
                         <FavFoods />
                       </Container>
-        </Box>
-
-        <Box
-          sx={{
-            py: 3,
-            px: 2,
-            mt: "auto",
-            position: "fixed",
-            bottom: 0,
-            width: "100%",
-            height: "85px",
-            backgroundColor: (theme) =>
-              theme.palette.mode === "light" ? theme.palette.grey[200] : theme.palette.grey[800],
-          }}
-        >
-          <Footer />
         </Box>
       </Box>
     </ThemeProvider>

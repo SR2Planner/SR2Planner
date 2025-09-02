@@ -56,7 +56,7 @@ export default function Help() {
             <Link href="https://github.com/SR2Planner/SR2Planner/issues/new?assignees=SR2Planner&labels=new&projects=SR2Planner%2F1&template=HELP_REQUEST.yml&title=Help+Request%3A+">
               open a help request here
             </Link>
-            .
+            or send an email to slimerancher2planner@gmail.com.
           </Typography>
         </Box>
       </Modal>

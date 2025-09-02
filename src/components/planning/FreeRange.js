@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import FormControl from "@mui/material/FormControl";
 import Input from "@mui/material/Input";
 import MenuItem from "@mui/material/MenuItem";
@@ -74,10 +74,18 @@ const freeRangeeTypes = [
   { name: "None", image: "placeholder.png" },
 ];
 
-export default function FreeRangePlanner({ plot }) {
-  const [open, setOpen] = React.useState(false);
-  const [chosenContent1, setChosenContent1] = React.useState([]);
-  const [chosenContent2, setChosenContent2] = React.useState([]);
+export default function FreeRange({ plot, savedPlan, onPlanUpdate }) {
+  const [open, setOpen] = useState(false);
+  const [chosenContent1, setChosenContent1] = useState([]);
+  const [chosenContent2, setChosenContent2] = useState([]);
+
+  // Load saved plan when component mounts or savedPlan changes
+  useEffect(() => {
+    if (savedPlan) {
+      setChosenContent1(savedPlan.content1 || []);
+      setChosenContent2(savedPlan.content2 || []);
+    }
+  }, [savedPlan]);
 
   const handleOpen = () => {
     setOpen(true);
@@ -88,12 +96,31 @@ export default function FreeRangePlanner({ plot }) {
   };
 
   const handleChangeContent1 = (event) => {
-    setChosenContent1(event.target.value);
+    const newContent1 = event.target.value;
+    setChosenContent1(newContent1);
+    updatePlan(newContent1, chosenContent2);
   };
 
   const handleChangeContent2 = (event) => {
-    setChosenContent2(event.target.value);
+    const newContent2 = event.target.value;
+    setChosenContent2(newContent2);
+    updatePlan(chosenContent1, newContent2);
   };
+
+  const updatePlan = (content1, content2) => {
+    // Only save if there's actual content
+    if ((content1.name && content1.name !== "None") || (content2.name && content2.name !== "None")) {
+      const planData = {
+        content1,
+        content2,
+        lastUpdated: new Date().toISOString()
+      };
+      onPlanUpdate(planData);
+    } else {
+      onPlanUpdate(null);
+    }
+  };
+
   let plotText = "Free Range";
 
   let plotContentImages = <div />;
@@ -220,7 +247,7 @@ export default function FreeRangePlanner({ plot }) {
                 <em>Plot Content 1</em>
               </MenuItem>
               {freeRangeeTypes.map((content) => (
-                <MenuItem key={content} value={content}>
+                <MenuItem key={content.name} value={content}>
                   {content.name}
                 </MenuItem>
               ))}
@@ -238,7 +265,7 @@ export default function FreeRangePlanner({ plot }) {
                 <em>Plot Content 2</em>
               </MenuItem>
               {freeRangeeTypes.map((content) => (
-                <MenuItem key={content} value={content}>
+                <MenuItem key={content.name} value={content}>
                   {content.name}
                 </MenuItem>
               ))}
