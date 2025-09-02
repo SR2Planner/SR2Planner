@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState, useEffect } from "react";
 import Plot from "../planning/Plot";
 import FreeRange from "../planning/FreeRange";
 import Grid from "@mui/material/Grid";
@@ -7,6 +8,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
+
 
 const plotsGully = [
   { id: "gu1", top: 140, left: 640 },
@@ -71,335 +73,212 @@ const areas = [
   {
     name: "The Gully",
     image: "areas/gully.png",
-    areaMap:"./gully.png",
+    areaMap: "./gully.png",
     color: "rgba(212, 128, 35, 1)",
   },
   {
     name: "The Tidepools",
     image: "areas/tidepools.png",
-    areaMap:"./tidepools.png",
+    areaMap: "./tidepools.png",
     color: "rgba(241, 93, 155, 1)",
   },
   {
     name: "The Conservatory",
     image: "areas/conservatory.png",
-    areaMap:"./conservatory.png",
+    areaMap: "./conservatory.png",
     color: "rgba(5, 92, 163, 1)",
   },
   {
     name: "The Archway",
     image: "areas/archway.png",
-    areaMap:"./archway.png",
+    areaMap: "./archway.png",
     color: "rgba(204, 212, 250, 1)",
   },
   {
     name: "The Den",
     image: "areas/den.png",
-    areaMap:"./den.png",
+    areaMap: "./den.png",
     color: "rgba(123, 104, 255, 1)",
   },
   {
     name: "The Digsite",
     image: "areas/digsite.png",
-    areaMap:"./digsite.png",
+    areaMap: "./digsite.png",
     color: "rgba(145, 126, 171, 1)",
   },
 ];
 
-export default function Planner() {
-  return (
-    <div>
-        <div>
-          <Grid
-            container
-            spacing={1}
+const STORAGE_KEY = 'sr2-planner-data';
+
+const saveToLocalStorage = (plotPlans) => {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(plotPlans));
+  } catch (error) {
+    console.error('Failed to save to localStorage:', error);
+  }
+};
+
+const loadFromLocalStorage = () => {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    return saved ? JSON.parse(saved) : {};
+  } catch (error) {
+    console.error('Failed to load from localStorage:', error);
+    return {};
+  }
+};
+
+
+const AreaCard = ({ area, index }) => (
+  <Grid item xs={4} key={area.name}>
+    <Card>
+      <CardContent
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          background: area.color,
+          pb: index === 0 ? "0px" : undefined,
+        }}
+      >
+        <Container sx={{
+          display: "flex",
+          flexDirection: "row",
+          background: area.color,
+        }}>
+          <CardMedia
+            component="img"
+            alt={area.name}
+            sx={{ padding: "0", width: "40px", objectFit: "contain", marginRight: "10px" }}
+            image={require(`../../../public/images/${area.image}`)}
+          />
+          <Typography
+            variant="body1"
+            align="center"
             sx={{
-              width: "1000px",
+              background: "rgba(255, 255, 255, .5)",
+              padding: "2px",
+              lineHeight: 2,
+              alignContent: "center",
+              width: "150px",
             }}
           >
-            <Grid item xs={4}>
-              <Card>
-                <CardContent
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    background: "rgba(212, 128, 35, 1)",
-                    pb: "0px"
-                  }}
-                >
-                <Container sx={{
-                    display: "flex",
-                    flexDirection: "row",
-                    background: "rgba(212, 128, 35, 1)",
-                }}>
-                  <CardMedia
-                    component="img"
-                    alt={areas[0].name}
-                    sx={{ padding: "0", width: "40px", objectFit: "contain", marginRight: "10px" }}
-                    image={require(`../../../public/images/${areas[0].image}`)}
-                  />
-                  <Typography
-                    variant="body1"
-                    align="center"
-                    sx={{
-                      background: "rgba(255, 255, 255, .5)",
-                      padding: "2px",
-                      lineHeight: 2,
-                      alignContent: "center",
-                      width: "150px",
-                    }}
-                  >
-                    {areas[0].name}
-                  </Typography>
-                  </Container>
-                 <CardMedia
-                    component="img"
-                    alt={`${areas[0].name} area map`}
-                    sx={{ padding: "0", width: "300px", objectFit: "contain", alignSelf: "center" }}
-                    image={require(`./gully.png`)}
-                  />
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={4}>
-              <Card>
-                <CardContent
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    background: "rgba(241, 93, 155, 1)",
-                  }}
-                >
-                                <Container sx={{
-                                    display: "flex",
-                                    flexDirection: "row",
-                                    background: "rgba(241, 93, 155, 1)",
-                                }}>
-                  <CardMedia
-                    component="img"
-                    alt={areas[0].name}
-                    sx={{ padding: "0", width: "40px", objectFit: "contain", marginRight: "10px" }}
-                    image={require(`../../../public/images/${areas[1].image}`)}
-                  />
-                  <Typography
-                    variant="body1"
-                    align="center"
-                    sx={{
-                      background: "rgba(255, 255, 255, .5)",
-                      padding: "2px",
-                      lineHeight: 2,
-                      alignContent: "center",
-                      width: "150px",
-                    }}
-                  >
-                    {areas[1].name}
-                  </Typography>
-                                    </Container>
+            {area.name}
+          </Typography>
+        </Container>
+        <CardMedia
+          component="img"
+          alt={`${area.name} area map`}
+          sx={{ 
+            padding: "0", 
+            width: "300px", 
+            objectFit: "contain", 
+            alignSelf: index === 0 ? "center" : undefined,
+            marginRight: index === 0 ? undefined : "10px" 
+          }}
+          image={require(`${area.areaMap}`)}
+        />
+      </CardContent>
+    </Card>
+  </Grid>
+);
 
-                                   <CardMedia
-                                      component="img"
-                                      alt={`${areas[1].name} area map`}
-                                      sx={{ padding: "0", width: "300px", objectFit: "contain", marginRight: "10px" }}
-                                      image={require(`./tidepools.png`)}
-                                    />
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={4}>
-              <Card>
-                <CardContent
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    background: "rgba(5, 92, 163, 1)",
-                  }}
-                >
-                               <Container sx={{
-                                    display: "flex",
-                                    flexDirection: "row",
-                                    background: "rgba(5, 92, 163, 1)",
-                                }}>
-                  <CardMedia
-                    component="img"
-                    alt={areas[2].name}
-                    sx={{ padding: "0", width: "40px", objectFit: "contain", marginRight: "10px" }}
-                    image={require(`../../../public/images/${areas[2].image}`)}
-                  />
-                  <Typography
-                    variant="body1"
-                    align="center"
-                    sx={{
-                      background: "rgba(255, 255, 255, .5)",
-                      padding: "2px",
-                      lineHeight: 2,
-                      alignContent: "center",
-                      width: "150px",
-                    }}
-                  >
-                    {areas[2].name}
-                  </Typography>
-                                  </Container>
-                                   <CardMedia
-                                      component="img"
-                                      alt={`${areas[2].name} area map`}
-                                      sx={{ padding: "0", width: "300px", objectFit: "contain", marginRight: "10px" }}
-                                      image={require(`./conservatory.png`)}
-                                    />
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={4}>
-              <Card>
-                <CardContent
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    background: "rgba(204, 212, 250, 1)",
-                  }}
-                >
-                                <Container sx={{
-                                    display: "flex",
-                                    flexDirection: "row",
-                                    background: "rgba(204, 212, 250, 1)",
-                                }}>
-                  <CardMedia
-                    component="img"
-                    alt={areas[3].name}
-                    sx={{ padding: "0", width: "40px", objectFit: "contain", marginRight: "10px" }}
-                    image={require(`../../../public/images/${areas[3].image}`)}
-                  />
-                  <Typography
-                    variant="body1"
-                    align="center"
-                    sx={{
-                      background: "rgba(255, 255, 255, .5)",
-                      padding: "2px",
-                      lineHeight: 2,
-                      alignContent: "center",
-                      width: "150px",
-                    }}
-                  >
-                    {areas[3].name}
-                  </Typography>
-                                    </Container>
-                                   <CardMedia
-                                      component="img"
-                                      alt={`${areas[3].name} area map`}
-                                      sx={{ padding: "0", width: "300px", objectFit: "contain", marginRight: "10px" }}
-                                      image={require(`./archway.png`)}
-                                    />
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={4}>
-              <Card>
-                <CardContent
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    background: "rgba(123, 104, 255, 1)",
-                  }}
-                >
-                                <Container sx={{
-                                    display: "flex",
-                                    flexDirection: "row",
-                                    background: "rgba(123, 104, 255, 1)",
-                                }}>
-                  <CardMedia
-                    component="img"
-                    alt={areas[4].name}
-                    sx={{ padding: "0", width: "40px", objectFit: "contain", marginRight: "10px" }}
-                    image={require(`../../../public/images/${areas[4].image}`)}
-                  />
-                  <Typography
-                    variant="body1"
-                    align="center"
-                    sx={{
-                      background: "rgba(255, 255, 255, .5)",
-                      padding: "2px",
-                      lineHeight: 2,
-                      alignContent: "center",
-                      width: "150px",
-                    }}
-                  >
-                    {areas[4].name}
-                  </Typography>
-                                    </Container>
-                                   <CardMedia
-                                      component="img"
-                                      alt={`${areas[4].name} area map`}
-                                      sx={{ padding: "0", width: "300px", objectFit: "contain", marginRight: "10px" }}
-                                      image={require(`./den.png`)}
-                                    />
-                </CardContent>
-              </Card>
-            </Grid>
-            <Grid item xs={4}>
-              <Card>
-                <CardContent
-                  sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    background: "rgba(145, 126, 171, 1)",
-                  }}
-                >
-                                <Container sx={{
-                                    display: "flex",
-                                    flexDirection: "row",
-                                    background: "rgba(145, 126, 171, 1)",
-                                }}>
-                  <CardMedia
-                    component="img"
-                    alt={areas[5].name}
-                    sx={{ padding: "0", width: "40px", objectFit: "contain", marginRight: "10px" }}
-                    image={require(`../../../public/images/${areas[5].image}`)}
-                  />
-                  <Typography
-                    variant="body1"
-                    align="center"
-                    sx={{
-                      background: "rgba(255, 255, 255, .5)",
-                      padding: "2px",
-                      lineHeight: 2,
-                      alignContent: "center",
-                      width: "150px",
-                    }}
-                  >
-                    {areas[5].name}
-                  </Typography>
-                                   </Container>
-                                   <CardMedia
-                                      component="img"
-                                      alt={`${areas[5].name} area map`}
-                                      sx={{ padding: "0", width: "300px", objectFit: "contain", marginRight: "10px" }}
-                                      image={require(`./digsite.png`)}
-                                    />
-                </CardContent>
-              </Card>
-            </Grid>
-          </Grid>
-        </div>
+export default function Planner() {
+  const [plotPlans, setPlotPlans] = useState({});
 
+  // Load data from localStorage on component mount
+  useEffect(() => {
+    const savedPlans = loadFromLocalStorage();
+    setPlotPlans(savedPlans);
+  }, []);
+
+  // Save to localStorage whenever plotPlans changes
+  useEffect(() => {
+    saveToLocalStorage(plotPlans);
+  }, [plotPlans]);
+
+  // Function to update a plot's plan
+  const updatePlotPlan = (plotId, planData) => {
+    setPlotPlans(prev => ({
+      ...prev,
+      [plotId]: planData
+    }));
+  };
+
+
+  return (
+    <div>
+
+      {/* Area Cards */}
+      <div>
+        <Grid
+          container
+          spacing={1}
+          sx={{
+            width: "1000px",
+          }}
+        >
+          {areas.map((area, index) => (
+            <AreaCard key={area.name} area={area} index={index} />
+          ))}
+        </Grid>
+      </div>
+
+      {/* Plot Components */}
       {plotsGully.map((plot) => (
-        <Plot key={plot.id} plot={plot}></Plot>
+        <Plot 
+          key={plot.id} 
+          plot={plot} 
+          savedPlan={plotPlans[plot.id]}
+          onPlanUpdate={(planData) => updatePlotPlan(plot.id, planData)}
+        />
       ))}
       {plotsTidepools.map((plot) => (
-        <Plot key={plot.id} plot={plot}></Plot>
+        <Plot 
+          key={plot.id} 
+          plot={plot} 
+          savedPlan={plotPlans[plot.id]}
+          onPlanUpdate={(planData) => updatePlotPlan(plot.id, planData)}
+        />
       ))}
       {plotsConservatory.map((plot) => (
-        <Plot key={plot.id} plot={plot}></Plot>
+        <Plot 
+          key={plot.id} 
+          plot={plot} 
+          savedPlan={plotPlans[plot.id]}
+          onPlanUpdate={(planData) => updatePlotPlan(plot.id, planData)}
+        />
       ))}
       {plotsArchway.map((plot) => (
-        <Plot key={plot.id} plot={plot}></Plot>
+        <Plot 
+          key={plot.id} 
+          plot={plot} 
+          savedPlan={plotPlans[plot.id]}
+          onPlanUpdate={(planData) => updatePlotPlan(plot.id, planData)}
+        />
       ))}
       {plotsDen.map((plot) => (
-        <Plot key={plot.id} plot={plot}></Plot>
+        <Plot 
+          key={plot.id} 
+          plot={plot} 
+          savedPlan={plotPlans[plot.id]}
+          onPlanUpdate={(planData) => updatePlotPlan(plot.id, planData)}
+        />
       ))}
       {plotsDigsite.map((plot) => (
-        <Plot key={plot.id} plot={plot}></Plot>
+        <Plot 
+          key={plot.id} 
+          plot={plot} 
+          savedPlan={plotPlans[plot.id]}
+          onPlanUpdate={(planData) => updatePlotPlan(plot.id, planData)}
+        />
       ))}
       {freeRange.map((plot) => (
-        <FreeRange key={plot.id} plot={plot}></FreeRange>
+        <FreeRange 
+          key={plot.id} 
+          plot={plot} 
+          savedPlan={plotPlans[plot.id]}
+          onPlanUpdate={(planData) => updatePlotPlan(plot.id, planData)}
+        />
       ))}
     </div>
   );

@@ -154,8 +154,8 @@ export default function FavFoods() {
         </Table>
       </TableContainer>
       <TableContainer component={Paper} sx={{"margin-bottom": "5px"}}>
-        <Table size="small" aria-label="fav foods table">
-          <TableBody>
+      <Table size="small" aria-label="fav foods table" sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+      <TableBody>
             {rowsVeggie.map((row) => (
               <TableRow key={row.slime} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
                 <TableCell>
@@ -182,8 +182,8 @@ export default function FavFoods() {
         </Table>
       </TableContainer>
       <TableContainer component={Paper} sx={{"margin-bottom": "5px"}}>
-        <Table size="small" aria-label="fav foods table">
-          <TableBody>
+      <Table size="small" aria-label="fav foods table" sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+      <TableBody>
             {rowsMeat.map((row) => (
               <TableRow key={row.slime} sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
                 <TableCell>
@@ -210,8 +210,8 @@ export default function FavFoods() {
         </Table>
       </TableContainer>
       <TableContainer component={Paper} sx={{"margin-bottom": "5px"}}>
-        <Table size="small" aria-label="fav foods table">
-          <TableBody>
+      <Table size="small" aria-label="fav foods table" sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
+      <TableBody>
             {rowsNoFav.map((row) => (
               <TableRow key={row.slime} sx={{display:"flex", "&:last-child td, &:last-child th": { border: 0 } }}>
                 <TableCell align="center">
