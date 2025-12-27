@@ -11,6 +11,15 @@ import CardActionArea from "@mui/material/CardActionArea";
 import CardMedia from "@mui/material/CardMedia";
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import {
+  plotTypes,
+  corralSlimeTypes,
+  coopTypes,
+  fruitTypes,
+  veggieTypes,
+  incineratorSlimeTypes,
+  pondSlimeTypes,
+} from "./types";
 
 const style = {
   position: "absolute",
@@ -34,82 +43,6 @@ const MenuProps = {
     },
   },
 };
-
-// Move these to a separate constants file for better organization
-const plotTypes = [
-  { name: "Corral", image: "plots/corral.png" },
-  { name: "Coop", image: "plots/coop.png" },
-  { name: "Fruit Tree", image: "plots/garden.png" },
-  { name: "Veggie Patch", image: "plots/garden.png" },
-  { name: "Incinerator", image: "plots/incinerator.png" },
-  { name: "Pond", image: "plots/pond.png" },
-  { name: "Silo", image: "plots/silo.png" },
-  { name: "Empty", image: "placeholder.png" },
-];
-
-const corralSlimeTypes = [
-  { name: "Angler Slime", image: "slimes/angler.png" },
-  { name: "Batty Slime", image: "slimes/batty.png" },
-  { name: "Boom Slime", image: "slimes/boom.png" },
-  { name: "Cotton Slime", image: "slimes/cotton.png" },
-  { name: "Crystal Slime", image: "slimes/crystal.png" },
-  { name: "Dervish Slime", image: "slimes/dervish.png" },
-  { name: "Flutter Slime", image: "slimes/flutter.png" },
-  { name: "Honey Slime", image: "slimes/honey.png" },
-  { name: "Hunter Slime", image: "slimes/hunter.png" },
-  { name: "Phosphor Slime", image: "slimes/phosphor.png" },
-  { name: "Pink Slime", image: "slimes/pink.png" },
-  { name: "Ringtail Slime", image: "slimes/ringtail.png" },
-  { name: "Rock Slime", image: "slimes/rock.png" },
-  { name: "Saber Slime", image: "slimes/saber.png" },
-  { name: "Sloomber Slime", image: "slimes/sloomber.png" },
-  { name: "Tabby Slime", image: "slimes/tabby.png" },
-  { name: "Tangle Slime", image: "slimes/tangle.png" },
-  { name: "Twin Slime", image: "slimes/twin.png" },
-  { name: "Yolky Slime", image: "slimes/yolky.png" },
-  { name: "None", image: "placeholder.png" },
-];
-
-const coopTypes = [
-  { name: "Briar Hen", image: "meats/briarHen.png" },
-  { name: "Candied Hen", image: "meats/candiedHen.png" },
-  { name: "Hen Hen", image: "meats/henHen.png" },
-  { name: "Painted Hen", image: "meats/paintedHen.png" },
-  { name: "Sea Hen", image: "meats/seaHen.png" },
-  { name: "Stony Hen", image: "meats/stonyHen.png" },
-  { name: "Thundercluck", image: "meats/thundercluck.png" },
-  { name: "Mixed Meats", image: "meats/mixedMeats.png" },
-  { name: "Yolky Slime", image: "slimes/yolky.png" },
-  { name: "None", image: "placeholder.png" },
-];
-
-const fruitTypes = [
-  { name: "Cuberry", image: "fruits/cuberry.png" },
-  { name: "Mint Mango", image: "fruits/mintMango.png" },
-  { name: "Pogofruit", image: "fruits/pogofruit.png" },
-  { name: "Pomegranite", image: "fruits/pomegranite.png" },
-  { name: "Polaricherry", image: "fruits/polaricherry.png" },
-  { name: "Prickle Pear", image: "fruits/pricklePear.png" },
-  { name: "None", image: "placeholder.png" },
-];
-
-const veggieTypes = [
-  { name: "Carrot", image: "veggies/carrot.png" },
-  { name: "Heart Beat", image: "veggies/heartBeat.png" },
-  { name: "Odd Onion", image: "veggies/oddOnion.png" },
-  { name: "Water Lettuce", image: "veggies/waterLettuce.png" },
-  { name: "None", image: "placeholder.png" },
-];
-
-const incineratorSlimeTypes = [
-  { name: "Fire", image: "slimes/fire.png" },
-  { name: "None", image: "placeholder.png" },
-];
-
-const pondSlimeTypes = [
-  { name: "Puddle", image: "slimes/puddle.png" },
-  { name: "None", image: "placeholder.png" },
-];
 
 // Helper function to get content options based on plot type
 const getContentOptions = (plotTypeName) => {
@@ -147,7 +80,7 @@ export default function Plot({ plot, savedPlan, onPlanUpdate }) {
       setChosenPlotType(savedPlan.plotType || "");
       setChosenContent1(savedPlan.content1 || "");
       setChosenContent2(savedPlan.content2 || "");
-      
+
       if (savedPlan.plotType) {
         setContentOptions(getContentOptions(savedPlan.plotType.name));
       }
@@ -165,14 +98,14 @@ export default function Plot({ plot, savedPlan, onPlanUpdate }) {
   const handleChangePlotType = (event) => {
     const newPlotType = event.target.value;
     setChosenPlotType(newPlotType);
-    
+
     const newContentOptions = getContentOptions(newPlotType.name);
     setContentOptions(newContentOptions);
-    
+
     // Reset content selections when plot type changes
     setChosenContent1("");
     setChosenContent2("");
-    
+
     // Update the plan
     updatePlan(newPlotType, "", "");
   };
@@ -194,7 +127,7 @@ export default function Plot({ plot, savedPlan, onPlanUpdate }) {
       plotType,
       content1,
       content2,
-      lastUpdated: new Date().toISOString()
+      lastUpdated: new Date().toISOString(),
     };
     onPlanUpdate(planData);
   };
@@ -265,10 +198,12 @@ export default function Plot({ plot, savedPlan, onPlanUpdate }) {
     return <div />;
   };
 
-  const showContent2Select = chosenPlotType.name === "Corral" || chosenPlotType.name === "Coop";
-  const showContentSelects = chosenPlotType.name && 
-    chosenPlotType.name !== "" && 
-    chosenPlotType.name !== "Empty" && 
+  const showContent2Select =
+    chosenPlotType.name === "Corral" || chosenPlotType.name === "Coop";
+  const showContentSelects =
+    chosenPlotType.name &&
+    chosenPlotType.name !== "" &&
+    chosenPlotType.name !== "Empty" &&
     chosenPlotType.name !== "Silo";
 
   return (
@@ -304,7 +239,7 @@ export default function Plot({ plot, savedPlan, onPlanUpdate }) {
           </CardContent>
         </CardActionArea>
       </Card>
-      
+
       <Modal
         open={open}
         onClose={handleClose}
@@ -312,19 +247,21 @@ export default function Plot({ plot, savedPlan, onPlanUpdate }) {
         aria-describedby="configure-plot-content"
       >
         <Stack spacing={2} sx={style}>
-          <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
             <h3>Configure Plot</h3>
             {savedPlan && (
-              <Button 
-                size="small" 
-                color="error" 
-                onClick={clearPlot}
-              >
+              <Button size="small" color="error" onClick={clearPlot}>
                 Clear
               </Button>
             )}
           </Box>
-          
+
           <FormControl fullWidth>
             <Select
               displayEmpty
@@ -344,7 +281,7 @@ export default function Plot({ plot, savedPlan, onPlanUpdate }) {
               ))}
             </Select>
           </FormControl>
-          
+
           {showContentSelects && (
             <>
               <FormControl fullWidth>
@@ -365,7 +302,7 @@ export default function Plot({ plot, savedPlan, onPlanUpdate }) {
                   ))}
                 </Select>
               </FormControl>
-              
+
               {showContent2Select && (
                 <FormControl fullWidth>
                   <Select

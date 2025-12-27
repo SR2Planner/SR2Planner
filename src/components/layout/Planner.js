@@ -20,44 +20,44 @@ const plotsGully = [
 
 const plotsTidepools = [
   { id: "tp1", top: 140, left: 890 },
-  { id: "tp2", top: 150, left: 1000 },
-  { id: "tp3", top: 260, left: 950 },
-  { id: "tp4", top: 260, left: 1015 },
-  { id: "tp5", top: 350, left: 1000 },
+  { id: "tp2", top: 150, left: 1005 },
+  { id: "tp3", top: 260, left: 955 },
+  { id: "tp4", top: 260, left: 1020 },
+  { id: "tp5", top: 350, left: 1005 },
 ];
 
 const plotsConservatory = [
-  { id: "cv1", top: 140, left: 1180 },
-  { id: "cv2", top: 140, left: 1235 },
-  { id: "cv3", top: 295, left: 1390 },
-  { id: "cv4", top: 350, left: 1390 },
-  { id: "cv5", top: 295, left: 1235 },
-  { id: "cv6", top: 350, left: 1180 },
-  { id: "cv7", top: 350, left: 1235 },
-  { id: "cv8", top: 350, left: 1290 },
+  { id: "cv1", top: 140, left: 1185 },
+  { id: "cv2", top: 140, left: 1240 },
+  { id: "cv3", top: 295, left: 1395 },
+  { id: "cv4", top: 350, left: 1395 },
+  { id: "cv5", top: 295, left: 1240 },
+  { id: "cv6", top: 350, left: 1185 },
+  { id: "cv7", top: 350, left: 1240 },
+  { id: "cv8", top: 350, left: 1295 },
 ];
 
 const plotsArchway = [
-  { id: "aw1", top: 557, left: 570 },
-  { id: "aw2", top: 685, left: 520 },
-  { id: "aw3", top: 590, left: 652 },
-  { id: "aw4", top: 645, left: 718 },
-  { id: "aw5", top: 715, left: 700 },
+  { id: "aw1", top: 550, left: 570 },
+  { id: "aw2", top: 675, left: 520 },
+  { id: "aw3", top: 585, left: 650 },
+  { id: "aw4", top: 635, left: 718 },
+  { id: "aw5", top: 705, left: 700 },
 ];
 
 const plotsDen = [
-  { id: "dn1", top: 608, left: 858 },
-  { id: "dn2", top: 582, left: 915 },
-  { id: "dn3", top: 690, left: 897 },
-  { id: "dn4", top: 692, left: 960 },
-  { id: "dn5", top: 667, left: 1046 },
+  { id: "dn1", top: 600, left: 860 },
+  { id: "dn2", top: 575, left: 920 },
+  { id: "dn3", top: 680, left: 900 },
+  { id: "dn4", top: 685, left: 965 },
+  { id: "dn5", top: 660, left: 1050 },
 ];
 
 const plotsDigsite = [
-  { id: "ds1", top: 525, left: 1275 },
-  { id: "ds2", top: 657, left: 1262 },
-  { id: "ds3", top: 710, left: 1262 },
-  { id: "ds4", top: 748, left: 1315 },
+  { id: "ds1", top: 517, left: 1285 },
+  { id: "ds2", top: 650, left: 1267 },
+  { id: "ds3", top: 705, left: 1267 },
+  { id: "ds4", top: 741, left: 1321 },
 ];
 
 const freeRange = [
@@ -130,7 +130,7 @@ const loadFromLocalStorage = () => {
 
 
 const AreaCard = ({ area, index }) => (
-  <Grid item xs={4} key={area.name}>
+  <Grid item xs={4} key={area.name} size={1}>
     <Card>
       <CardContent
         sx={{
@@ -211,6 +211,7 @@ export default function Planner() {
       {/* Area Cards */}
       <div>
         <Grid
+          columns={3}
           container
           spacing={1}
           sx={{

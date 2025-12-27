@@ -11,6 +11,7 @@ import CardContent from "@mui/material/CardContent";
 import CardActionArea from "@mui/material/CardActionArea";
 import CardMedia from "@mui/material/CardMedia";
 import Stack from "@mui/material/Stack";
+import { freeRangeTypes } from "./types.js";
 
 const style = {
   position: "absolute",
@@ -34,45 +35,6 @@ const MenuProps = {
     },
   },
 };
-
-const freeRangeeTypes = [
-  { name: "Angler Slime", image: "slimes/angler.png" },
-  { name: "Batty Slime", image: "slimes/batty.png" },
-  { name: "Boom Slime", image: "slimes/boom.png" },
-  { name: "Cotton Slime", image: "slimes/cotton.png" },
-  { name: "Crystal Slime", image: "slimes/crystal.png" },
-  { name: "Dervish Slime", image: "slimes/dervish.png" },
-  { name: "Flutter Slime", image: "slimes/flutter.png" },
-  { name: "Honey Slime", image: "slimes/honey.png" },
-  { name: "Hunter Slime", image: "slimes/hunter.png" },
-  { name: "Phosphor Slime", image: "slimes/phosphor.png" },
-  { name: "Pink Slime", image: "slimes/pink.png" },
-  { name: "Ringtail Slime", image: "slimes/ringtail.png" },
-  { name: "Rock Slime", image: "slimes/rock.png" },
-  { name: "Saber Slime", image: "slimes/saber.png" },
-  { name: "Tabby Slime", image: "slimes/tabby.png" },
-  { name: "Tangle Slime", image: "slimes/tangle.png" },
-  { name: "Yolky Slime", image: "slimes/yolky.png" },
-  { name: "Briar Hen", image: "meats/briarHen.png" },
-  { name: "Hen Hen", image: "meats/henHen.png" },
-  { name: "Painted Hen", image: "meats/paintedHen.png" },
-  { name: "Sea Hen", image: "meats/seaHen.png" },
-  { name: "Stony Hen", image: "meats/stonyHen.png" },
-  { name: "Thundercluck", image: "meats/Thundercluck.png" },
-  { name: "Mixed Meats", image: "meats/mixedMeats.png" },
-  { name: "Cuberry", image: "fruits/cuberry.png" },
-  { name: "Mint Mango", image: "fruits/mintMango.png" },
-  { name: "Pogofruit", image: "fruits/pogofruit.png" },
-  { name: "Pomegranite", image: "fruits/pomegranite.png" },
-  { name: "Prickle Pear", image: "fruits/pricklePear.png" },
-  { name: "Mixed Fruits", image: "fruits/mixedFruits.png" },
-  { name: "Carrot", image: "veggies/carrot.png" },
-  { name: "Heart Beat", image: "veggies/heartBeat.png" },
-  { name: "Odd Onion", image: "veggies/oddOnion.png" },
-  { name: "Water Lettuce", image: "veggies/waterLettuce.png" },
-  { name: "Mixed Veggies", image: "veggies/mixedVeggies.png" },
-  { name: "None", image: "placeholder.png" },
-];
 
 export default function FreeRange({ plot, savedPlan, onPlanUpdate }) {
   const [open, setOpen] = useState(false);
@@ -109,11 +71,14 @@ export default function FreeRange({ plot, savedPlan, onPlanUpdate }) {
 
   const updatePlan = (content1, content2) => {
     // Only save if there's actual content
-    if ((content1.name && content1.name !== "None") || (content2.name && content2.name !== "None")) {
+    if (
+      (content1.name && content1.name !== "None") ||
+      (content2.name && content2.name !== "None")
+    ) {
       const planData = {
         content1,
         content2,
-        lastUpdated: new Date().toISOString()
+        lastUpdated: new Date().toISOString(),
       };
       onPlanUpdate(planData);
     } else {
@@ -181,16 +146,20 @@ export default function FreeRange({ plot, savedPlan, onPlanUpdate }) {
       />
     );
   } else {
-    plotContentImages = <div>
-      <Typography
-        variant="body1"
-        align="center"
-        sx={{
-          paddingBottom: "3px",
-          fontSize: "0.75rem"
-        }}>
+    plotContentImages = (
+      <div>
+        <Typography
+          variant="body1"
+          align="center"
+          sx={{
+            paddingBottom: "3px",
+            fontSize: "0.75rem",
+          }}
+        >
           {plotText}
-      </Typography></div>;
+        </Typography>
+      </div>
+    );
   }
 
   return (
@@ -246,7 +215,7 @@ export default function FreeRange({ plot, savedPlan, onPlanUpdate }) {
               <MenuItem value="">
                 <em>Plot Content 1</em>
               </MenuItem>
-              {freeRangeeTypes.map((content) => (
+              {freeRangeTypes.map((content) => (
                 <MenuItem key={content.name} value={content}>
                   {content.name}
                 </MenuItem>
@@ -264,7 +233,7 @@ export default function FreeRange({ plot, savedPlan, onPlanUpdate }) {
               <MenuItem value="">
                 <em>Plot Content 2</em>
               </MenuItem>
-              {freeRangeeTypes.map((content) => (
+              {freeRangeTypes.map((content) => (
                 <MenuItem key={content.name} value={content}>
                   {content.name}
                 </MenuItem>

@@ -58,6 +58,12 @@ const rowsVeggie = [
     food: "Water Lettuce",
     foodImage: "veggies/waterLettuce.png",
   },
+  {
+    slime: "Hyper",
+    slimeImage: "slimes/hyper.png",
+    food: "Turbo Tater",
+    foodImage: "veggies/turboTater.png"
+  }
 ];
 const rowsMeat = [
   {
